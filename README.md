@@ -1,5 +1,5 @@
 <!-- Update the title to match the module name and add a description -->
-# Mock Module
+# Mock Module (NOT FOR GENERAL CONSUMPTION)
 
 <!-- UPDATE BADGE: Update the link for the badge below-->
 
@@ -11,7 +11,7 @@
 
 <!-- Remove the content in this H2 heading after completing the steps -->
 
-This is a mock module for testing purposes like testing catalog pipeline.
+This is a mock module for testing purposes and not for general consumption.
 
 ## Examples
 
