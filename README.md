@@ -52,5 +52,6 @@ To set up your local development environment, see [Local development setup](http
 
 <!-- BEGIN EXAMPLES HOOK -->
 ## Examples
-- [# Default example](examples/default)
+
+- [ Default example](examples/default)
 <!-- END EXAMPLES HOOK -->
