@@ -1,5 +1,4 @@
 module github.com/terraform-ibm-modules/mock-module
-module github.com/terraform-ibm-modules/terraform-ibm-module-template
 
 go 1.19
 
