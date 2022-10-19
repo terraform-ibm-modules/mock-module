@@ -2,7 +2,7 @@
 
 This file is used to declare ROOT varaibles.
 
-E.g:
+E.G:
 
 variable "at_service_name" {
   type        = string
