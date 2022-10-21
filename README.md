@@ -1,4 +1,3 @@
-<!-- Update the title to match the module name and add a description -->
 # Mock Module (NOT FOR GENERAL CONSUMPTION)
 
 <!-- UPDATE BADGE: Update the link for the badge below-->
