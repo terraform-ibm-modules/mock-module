@@ -10,7 +10,7 @@
     }],
     ["@semantic-release/exec", {
       "successCmd": "echo \"SEMVER_VERSION=${nextRelease.version}\" >> $GITHUB_ENV",
-      "publishCmd": "./ci/run-catalog-onboarding-pipeline.sh --version=v${nextRelease.version} --target=account --github_url=github.com --github_org=terraform-ibm-modules"
+      "publishCmd": "./ci/run-catalog-onboarding-pipeline.sh --version=v${nextRelease.version} --github_url=github.com --github_org=terraform-ibm-modules"
     }]
   ]
 }
