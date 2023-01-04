@@ -26,7 +26,7 @@ deployment-url: https://test.cloud.ibm.com/catalog/content/terraform-ibm-powervs
 
 docs: https://cloud.ibm.com/docs/framework-financial-services
 
-image_source: 
+image_source:
 
 related_links:
   - title: 'Consumer connectivity to workload VPC'
