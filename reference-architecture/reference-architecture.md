@@ -45,7 +45,7 @@ content-type: reference-architecture
 
 {{site.data.keyword.attribute-definition-list}}
 
-# VPC landing zone
+# VSI on VPC landing zone
 {: #vpc-architecture-vsi}
 {: toc-content-type="reference-architecture"}
 {: toc-industry="Banking,FinancialSector"}
