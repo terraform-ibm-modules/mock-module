@@ -1,4 +1,3 @@
-<!-- Update the title to match the module name and add a description -->
 # Mock Module (NOT FOR GENERAL CONSUMPTION)
 
 [comment]: <> ([![Build Status]&#40;https://github.com/terraform-ibm-modules/terraform-ibm-module-template/actions/workflows/ci.yml/badge.svg&#41;]&#40;https://github.com/terraform-ibm-modules/terraform-ibm-module-template/actions/workflows/ci.yml&#41;)
