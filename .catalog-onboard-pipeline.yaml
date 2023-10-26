@@ -1,0 +1,32 @@
+offerings:
+  - name: terraform-ibm-mock-module
+    kind: module
+    catalog_id: 7df1e4ca-d54c-4fd0-82ce-3d13247308cd
+    offering_id: tbc
+    examples:
+      - name: basic
+        mark_ready: true
+      - name: complete
+        mark_ready: true
+  - name: deploy-arch-ibm-mock-module
+    kind: solution
+    catalog_id: 7df1e4ca-d54c-4fd0-82ce-3d13247308cd
+    offering_id: tbc
+    variations:
+      - name: quickstart
+        mark_ready: true
+        install_type: fullstack
+      - name: standard
+        mark_ready: true
+        install_type: fullstack
+        scc:
+          instance_id: 1c7d5f78-9262-44c3-b779-b28fe4d88c37
+          region: us-south
+      - name: extension
+        mark_ready: true
+        install_type: extension
+        pre_validation: tests/scripts/pre-validation.sh
+        post_validation: tests/scripts/post-validation.sh
+        scc:
+          instance_id: 1c7d5f78-9262-44c3-b779-b28fe4d88c37
+          region: us-south

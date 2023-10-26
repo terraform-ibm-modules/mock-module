@@ -1,22 +1,9 @@
-/********************************************************************
-
-This file is used to capture ROOT module outputs.
-
-E.g:
-
-output "at_id" {
-  description = "Activity tracker id"
-  value       = concat(ibm_resource_instance.at_instance.*.id, [""])[0]
+output "ssh_key_id" {
+  description = "The ID of the ssh key"
+  value       = ibm_is_ssh_key.ssh_key.id
 }
 
-output "at_guid" {
-  description = "The GUID of the activity tracker"
-  value       = concat(ibm_resource_instance.at_instance.*.guid, [""])[0]
+output "fingerprint" {
+  description = "SSH key Fingerprint info"
+  value       = ibm_is_ssh_key.ssh_key.fingerprint
 }
-
-output "at_key_id" {
-  description = "Activity tracker key id"
-  value       = concat(ibm_resource_key.activity_tracker_key.*.id, [""])[0]
-}
-
-*********************************************************************/

@@ -1,24 +1,16 @@
-/********************************************************************
-
-This file is used to declare ROOT varaibles.
-
-E.g:
-
-variable "at_service_name" {
+variable "name" {
+  description = "Name of the SSH Key."
   type        = string
-  description = "Activity Tracker: The name of the activity tracker"
 }
 
-variable "at_bind_key" {
-  description = "Activity Tracker: Enable this to bind key to instance (true/false)"
-  type        = bool
-  default     = false
+variable "resource_group_id" {
+  description = "ID of resource group. If not specified, Default resource group used."
+  type        = string
+  default     = null
 }
 
-variable "at_create_instance" {
-  description = "Activity Tracker: Controls if Activity Tracker should be created"
-  type        = bool
-  default     = true
+variable "tags" {
+  description = "List of Tags for the SSH Key."
+  type        = list(string)
+  default     = []
 }
-
-********************************************************************/

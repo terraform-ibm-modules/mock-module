@@ -40,9 +40,6 @@ terraform.rc
 # Ignore .tfsec
 .tfsec/
 
-# Ignore brew lock
-Brewfile.lock.json
-
 # Ignore Mac files
 .DS_Store
 
@@ -52,5 +49,5 @@ Brewfile.lock.json
 # Node modules
 /node_modules
 
-# Ignore .vscode files
+# Visual Studio Code
 .vscode/
