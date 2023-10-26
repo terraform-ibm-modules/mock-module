@@ -16,15 +16,19 @@ offerings:
       - name: quickstart
         mark_ready: true
         install_type: fullstack
+        destroy_resources_on_failure: true
+        destroy_workspace_on_failure: false
       - name: standard
         mark_ready: true
         install_type: fullstack
+        import_only: true
         scc:
           instance_id: 1c7d5f78-9262-44c3-b779-b28fe4d88c37
           region: us-south
       - name: extension
         mark_ready: true
         install_type: extension
+        validation_rg: temp
         pre_validation: tests/scripts/pre-validation.sh
         post_validation: tests/scripts/post-validation.sh
         scc:
