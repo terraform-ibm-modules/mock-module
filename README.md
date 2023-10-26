@@ -33,7 +33,7 @@ unless real values don't help users know what to change.
 -->
 
 ```hcl
-module "mock-module" {
+module "mock_module" {
   # Replace "X.X.X" with a release version to lock into a specific release
   source            = "git::https://github.com/terraform-ibm-modules/mock-module.git?ref=X.X.X"
   name              = "mock"

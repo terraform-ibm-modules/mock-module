@@ -22,9 +22,9 @@ locals {
 # Call root level module to create SSH key
 #############################################################################
 
-module "mock-module" {
-  source = "../.."
-  name = var.prefix
+module "mock_module" {
+  source            = "../.."
+  name              = var.prefix
   resource_group_id = local.resource_group_id
-  tags = var.resource_tags
+  tags              = var.resource_tags
 }
