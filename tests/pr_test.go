@@ -37,7 +37,7 @@ func TestRunBasicExample(t *testing.T) {
 func TestRunCompleteExample(t *testing.T) {
 	t.Parallel()
 
-	options := setupOptions(t, "mock-com", completeExampleDir)
+	options := setupOptions(t, "mock-com", completeExampleTerraformDir)
 
 	output, err := options.RunTestConsistency()
 	assert.Nil(t, err, "This should not have errored")
