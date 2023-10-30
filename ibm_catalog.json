@@ -103,7 +103,7 @@
         },
         {
             "name": "deploy-arch-ibm-mock-module",
-            "label": "VSI on VPC landing zone",
+            "label": "Mock DA",
             "product_kind": "solution",
             "tags": [
                 "ibm_created",
@@ -135,7 +135,7 @@
             ],
             "flavors": [
                 {
-                    "label": "QuickStart",
+                    "label": "QuickStart Mock",
                     "name": "quickstart",
                     "install_type": "fullstack",
                     "working_directory": "solutions/mock-da-quickstart",
@@ -249,7 +249,7 @@
                     }
                 },
                 {
-                    "label": "Extension",
+                    "label": "QuickStart Mock",
                     "name": "extension",
                     "install_type": "extension",
                     "working_directory": "solutions/mock-da-extension",
