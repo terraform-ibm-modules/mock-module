@@ -15,15 +15,16 @@ data "ibm_resource_group" "existing_resource_group" {
 }
 
 locals {
-  resource_group = var.resource_group != null ? data.ibm_resource_group.existing_resource_group[0].id : ibm_resource_group.resource_group[0].id
+  resource_group_id = var.resource_group != null ? data.ibm_resource_group.existing_resource_group[0].id : ibm_resource_group.resource_group[0].id
 }
 
 #############################################################################
-# VPC
+# Call root level module to create SSH key
 #############################################################################
 
-resource "ibm_is_vpc" "vpc" {
-  name           = "${var.prefix}-vpc"
-  resource_group = local.resource_group
-  tags           = var.resource_tags
+module "mock_module" {
+  source            = "../.."
+  name              = var.prefix
+  resource_group_id = local.resource_group_id
+  tags              = var.resource_tags
 }
