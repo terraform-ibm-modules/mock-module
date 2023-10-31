@@ -250,7 +250,7 @@
                 },
                 {
                     "label": "QuickStart Mock",
-                    "name": "extension",
+                    "name": "quickstart",
                     "install_type": "extension",
                     "working_directory": "solutions/mock-da-extension",
                     "dependencies": [
