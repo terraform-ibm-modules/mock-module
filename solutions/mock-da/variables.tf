@@ -27,3 +27,9 @@ variable "resource_tags" {
   description = "Optional list of tags to be added to created resources"
   default     = []
 }
+
+variable "testing" {
+  type        = list(string)
+  description = "Test variable to test setting list of strings to null"
+  default     = null
+}
