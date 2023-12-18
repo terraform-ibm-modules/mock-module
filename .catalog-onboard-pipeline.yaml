@@ -5,6 +5,7 @@ offerings:
     kind: module
     catalog_id: 7df1e4ca-d54c-4fd0-82ce-3d13247308cd
     offering_id: 3fa729e0-4b4b-4210-85e7-8bb8fa98c3b9
+    mark_ready_together: true
     examples:
       - name: basic
         mark_ready: false
