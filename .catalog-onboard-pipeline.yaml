@@ -8,9 +8,9 @@ offerings:
     mark_ready_together: true
     examples:
       - name: basic
-        mark_ready: false
+        mark_ready: true
       - name: complete
-        mark_ready: false
+        mark_ready: true
   - name: deploy-arch-ibm-mock-module
     kind: solution
     catalog_id: 7df1e4ca-d54c-4fd0-82ce-3d13247308cd
