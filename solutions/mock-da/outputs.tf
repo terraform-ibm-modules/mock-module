@@ -16,3 +16,13 @@ output "test" {
   description = "test"
   value       = var.testing
 }
+
+output "vpc_id" {
+  description = "ID of VPC created"
+  value       = module.mock_module.vpc_id
+}
+
+output "vpc_crn" {
+  description = "CRN of VPC created"
+  value       = module.mock_module.vpc_crn
+}
