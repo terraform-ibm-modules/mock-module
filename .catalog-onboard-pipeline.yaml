@@ -3,6 +3,7 @@ apiVersion: v1
 offerings:
   - name: terraform-ibm-mock-module
     kind: module
+    ignore_code_freeze: true
     catalog_id: 7df1e4ca-d54c-4fd0-82ce-3d13247308cd
     offering_id: 3fa729e0-4b4b-4210-85e7-8bb8fa98c3b9
     examples:
@@ -12,6 +13,7 @@ offerings:
         mark_ready: false
   - name: deploy-arch-ibm-mock-module
     kind: solution
+    ignore_code_freeze: false
     catalog_id: 7df1e4ca-d54c-4fd0-82ce-3d13247308cd
     offering_id: 50c034fb-a0ba-412f-acca-20fa1258b818
     variations:
