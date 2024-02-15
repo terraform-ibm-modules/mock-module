@@ -14,7 +14,7 @@ offerings:
     kind: solution
     catalog_id: 7df1e4ca-d54c-4fd0-82ce-3d13247308cd
     offering_id: 50c034fb-a0ba-412f-acca-20fa1258b818
-    # variations:
+    variations:
     #   - name: quickstart
     #     mark_ready: false
     #     install_type: fullstack
