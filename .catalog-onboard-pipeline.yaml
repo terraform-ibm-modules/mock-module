@@ -8,8 +8,10 @@ offerings:
     examples:
       - name: basic
         mark_ready: false
+        validation_type: schematics
       - name: complete
         mark_ready: false
+        validation_type: projects
   - name: deploy-arch-ibm-mock-module
     kind: solution
     catalog_id: 7df1e4ca-d54c-4fd0-82ce-3d13247308cd
@@ -24,13 +26,14 @@ offerings:
       - name: standard
         mark_ready: false
         install_type: fullstack
-        validation_type: schematics
+        validation_type: projects
         scc:
           instance_id: 1c7d5f78-9262-44c3-b779-b28fe4d88c37
           region: us-south
       - name: quickstart
         mark_ready: false
         install_type: extension
+        validation_type: schematics
         validation_rg: temp
         pre_validation: tests/scripts/pre-validation.sh
         post_validation: tests/scripts/post-validation.sh
