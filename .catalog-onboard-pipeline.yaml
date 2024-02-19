@@ -7,7 +7,7 @@ offerings:
     offering_id: a91c3d21-5350-48ae-a0b6-a81666d44d3e
     variations:
       - name: standard
-        mark_ready: false
+        mark_ready: true
         destroy_resources_on_failure: true
         destroy_workspace_on_failure: false
         install_type: fullstack
