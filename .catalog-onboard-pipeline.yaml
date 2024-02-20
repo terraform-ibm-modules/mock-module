@@ -5,12 +5,12 @@ offerings:
     kind: solution
     catalog_id: a6e50733-8b10-4ec6-a847-8f4058c27889
     offering_id: b0b34cda-2313-432d-bd0d-375c175f5eb3
+    ignore_code_freeze: true
     variations:
       - name: standard
         mark_ready: true
         destroy_resources_on_failure: true
         destroy_workspace_on_failure: false
-        ignore_code_freeze: true
         install_type: fullstack
         validation_type: schematics
         scc:
