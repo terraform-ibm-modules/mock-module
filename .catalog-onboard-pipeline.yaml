@@ -10,6 +10,7 @@ offerings:
         mark_ready: true
         destroy_resources_on_failure: true
         destroy_workspace_on_failure: false
+        ignore_code_freeze: true
         install_type: fullstack
         validation_type: schematics
         scc:
