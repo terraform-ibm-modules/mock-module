@@ -4,7 +4,7 @@ offerings:
   - name: deploy-arch-ibm-mock-module
     kind: solution
     catalog_id: a6e50733-8b10-4ec6-a847-8f4058c27889
-    offering_id: a91c3d21-5350-48ae-a0b6-a81666d44d3e
+    offering_id: b0b34cda-2313-432d-bd0d-375c175f5eb3
     variations:
       - name: standard
         mark_ready: true
