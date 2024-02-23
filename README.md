@@ -9,7 +9,6 @@
 
 
 :warning: This is a mock module for testing purposes and not for general consumption.
-Update for release
 
 <!-- Below content is automatically populated via pre-commit hook -->
 <!-- BEGIN OVERVIEW HOOK -->
