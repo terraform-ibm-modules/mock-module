@@ -20,3 +20,7 @@ repository:
   description: "A module that is used for testing. This is not for general use."
 
   topics: "core-team"
+branches:
+  - name: main
+    protection:
+      enforce_admins: false
