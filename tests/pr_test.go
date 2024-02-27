@@ -47,7 +47,7 @@ func TestRunCompleteExample(t *testing.T) {
 func TestRunUpgradeExample(t *testing.T) {
 
 	t.Parallel()
-
+	// skip
 	options := setupOptions(t, "mock-da-upg", daTerraformDir)
 
 	output, err := options.RunTestUpgrade()
