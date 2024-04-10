@@ -109,7 +109,7 @@
                 "ibm_created",
                 "target_terraform",
                 "terraform",
-                "reference_architecture",
+                "converged_infra",
                 "solution"
             ],
             "keywords": [
