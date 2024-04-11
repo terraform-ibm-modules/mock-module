@@ -12,8 +12,7 @@ offerings:
         validation_type: schematics
       - name: complete
         mark_ready: true
-        # Uncomment when https://github.ibm.com/ibmcloud/projects/issues/3018 is fixed
-        # validation_type: projects
+        validation_type: projects
   - name: deploy-arch-ibm-mock-module
     ignore_code_freeze: true
     kind: solution
@@ -29,8 +28,7 @@ offerings:
       - name: standard
         mark_ready: true
         install_type: fullstack
-        # Uncomment when https://github.ibm.com/ibmcloud/projects/issues/3018 is fixed
-        # validation_type: projects
+        validation_type: projects
         scc:
           instance_id: 1c7d5f78-9262-44c3-b779-b28fe4d88c37
           region: us-south
