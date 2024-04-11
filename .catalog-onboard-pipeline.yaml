@@ -2,36 +2,40 @@
 apiVersion: v1
 offerings:
   - name: terraform-ibm-mock-module
+    ignore_code_freeze: true
     kind: module
     catalog_id: 7df1e4ca-d54c-4fd0-82ce-3d13247308cd
     offering_id: 3fa729e0-4b4b-4210-85e7-8bb8fa98c3b9
     examples:
       - name: basic
-        mark_ready: false
+        mark_ready: true
         validation_type: schematics
       - name: complete
-        mark_ready: false
-        validation_type: projects
+        mark_ready: true
+        # Uncomment when https://github.ibm.com/ibmcloud/projects/issues/3018 is fixed
+        # validation_type: projects
   - name: deploy-arch-ibm-mock-module
+    ignore_code_freeze: true
     kind: solution
     catalog_id: 7df1e4ca-d54c-4fd0-82ce-3d13247308cd
     offering_id: 50c034fb-a0ba-412f-acca-20fa1258b818
     variations:
       - name: quickstart
-        mark_ready: false
+        mark_ready: true
         install_type: fullstack
         destroy_resources_on_failure: true
         destroy_workspace_on_failure: false
         import_only: true
       - name: standard
-        mark_ready: false
+        mark_ready: true
         install_type: fullstack
-        validation_type: projects
+        # Uncomment when https://github.ibm.com/ibmcloud/projects/issues/3018 is fixed
+        # validation_type: projects
         scc:
           instance_id: 1c7d5f78-9262-44c3-b779-b28fe4d88c37
           region: us-south
       - name: quickstart
-        mark_ready: false
+        mark_ready: true
         install_type: extension
         validation_type: schematics
         validation_rg: temp
