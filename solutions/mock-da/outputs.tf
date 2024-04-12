@@ -34,5 +34,5 @@ output "resource_group" {
 
 output "resource_group_id" {
   description = "Resource Group ID"
-  value = var.resource_group != null ? ibm_resource_group.resource_group.id : data.ibm_resource_group.existing_resource_group.id
+  value = var.resource_group != null ? data.ibm_resource_group.existing_resource_group[0].id: ibm_resource_group.resource_group[0].id
 }
