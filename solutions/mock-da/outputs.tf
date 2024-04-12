@@ -31,3 +31,8 @@ output "resource_group" {
   description = "Resource Group Name"
   value = var.resource_group != null ? var.resource_group : "${var.prefix}-rg"
 }
+
+output "resource_group_id" {
+  description = "Resource Group ID"
+  value = var.resource_group != null ? ibm_resource_group.resource_group.id : data.ibm_resource_group.existing_resource_group.id
+}
