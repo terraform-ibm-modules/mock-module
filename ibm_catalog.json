@@ -215,6 +215,17 @@
                             },
                             "key": "region",
                             "required": true
+                        },
+                        {
+                            "custom_config": {
+                                "type": "resource_group",
+                                "grouping": "deployment",
+                                "original_grouping": "deployment",
+                                "config_constraints": {
+                                    "identifier": "rg_name"
+                                }
+                            }
+                            "key": "resource_group",
                         }
                     ],
                     "iam_permissions": [
