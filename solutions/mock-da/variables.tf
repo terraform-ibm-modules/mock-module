@@ -10,26 +10,8 @@ variable "region" {
   default     = "us-south"
 }
 
-variable "prefix" {
-  type        = string
-  description = "Prefix to append to all resources created by this example"
-  default     = "mock"
-}
-
-variable "resource_group" {
-  type        = string
-  description = "An existing resource group name to use for this example, if unset a new resource group will be created"
-  default     = null
-}
-
-variable "resource_tags" {
+variable "resource_group_names" {
   type        = list(string)
-  description = "Optional list of tags to be added to created resources"
-  default     = []
-}
-
-variable "testing" {
-  type        = list(string)
-  description = "Test variable to test setting list of strings to null"
-  default     = null
+  description = "List of resource group names to be created."
+  default     = ["mock1", "mock2"]
 }
