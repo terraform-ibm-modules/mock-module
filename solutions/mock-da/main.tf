@@ -1,19 +1,8 @@
-##############################################################################
-# Resource Group
-# (if var.resource_group is null, create a new RG using var.prefix)
-##############################################################################
+#############################################################################
+# Call root level module
+#############################################################################
 
-
-locals {
-  rg_map = {
-    for rg in var.resource_group_names :
-    "${rg}-rg" => {
-      name = rg
-    }
-  }
-}
-resource "ibm_resource_group" "resource_group" {
-  for_each = local.rg_map
-  name     = each.value.name
-  quota_id = null
+module "mock_module" {
+  source               = "../.."
+  resource_group_names = var.resource_group_names
 }
