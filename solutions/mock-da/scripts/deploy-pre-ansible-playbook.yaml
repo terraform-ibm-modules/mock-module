@@ -5,7 +5,6 @@
       set_fact:
         workspace_id: "{{ lookup('env', 'workspace_id') }}"
         IAM_TOKEN: "{{ lookup('env', 'IAM_TOKEN') }}"
-        REFRESH_TOKEN: "{{ lookup('env', 'REFRESH_TOKEN') }}"
     - name: Get Jobs ID
       uri:
         url: "https://schematics.cloud.ibm.com/v2/jobs?resource=workspaces&workspace_id={{ workspace_id }}"
@@ -68,7 +67,6 @@
         method: PUT
         headers:
           Authorization: "{{ IAM_TOKEN }}"
-          refresh_token: "{{ REFRESH_TOKEN }}"
           Content-Type: application/json
         body: "{{ commands }}"
         body_format: json
