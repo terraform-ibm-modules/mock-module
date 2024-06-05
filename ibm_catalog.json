@@ -14,7 +14,7 @@
                 "ibm_created",
                 "terraform",
                 "module",
-                "converged_infra"
+                "compute"
             ],
             "keywords": [
                 "mock",
