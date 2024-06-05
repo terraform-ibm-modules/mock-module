@@ -17,3 +17,8 @@ output "vpc_crn" {
   description = "CRN of VPC created"
   value       = ibm_is_vpc.vpc.crn
 }
+
+output "test_var_value" {
+  description = "hpc_reservation_id"
+  value       = local.test_var
+}

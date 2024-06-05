@@ -21,5 +21,9 @@ resource "ibm_is_vpc" "vpc" {
   default_security_group_name = "${var.name}-default-sg"
   default_routing_table_name  = "${var.name}-default-table"
   address_prefix_management   = "manual"
-  tags                        = var.tags
+  tags                        = (local.test_var != null) ? var.tags : []
+}
+
+locals {
+  test_var = concat([var.hpc_reservation_id, var.acme_key], [var.logdna_key, var.sdnlb_key])
 }

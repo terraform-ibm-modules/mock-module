@@ -71,9 +71,13 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_acme_key"></a> [acme\_key](#input\_acme\_key) | acme\_key | `string` | `"test"` | no |
 | <a name="input_classic_access"></a> [classic\_access](#input\_classic\_access) | Enable VPC Classic Access. Note: only one VPC per region can have classic access | `bool` | `false` | no |
+| <a name="input_hpc_reservation_id"></a> [hpc\_reservation\_id](#input\_hpc\_reservation\_id) | hpc\_reservation\_id | `string` | `"test"` | no |
+| <a name="input_logdna_key"></a> [logdna\_key](#input\_logdna\_key) | logdna\_key | `string` | `"test"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the SSH Key. | `string` | n/a | yes |
 | <a name="input_resource_group_id"></a> [resource\_group\_id](#input\_resource\_group\_id) | ID of resource group. If not specified, Default resource group used. | `string` | `null` | no |
+| <a name="input_sdnlb_key"></a> [sdnlb\_key](#input\_sdnlb\_key) | sdnlb\_key | `string` | `"test"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tags for the SSH Key. | `list(string)` | `[]` | no |
 
 ### Outputs
@@ -82,6 +86,7 @@ No modules.
 |------|-------------|
 | <a name="output_fingerprint"></a> [fingerprint](#output\_fingerprint) | SSH key Fingerprint info |
 | <a name="output_ssh_key_id"></a> [ssh\_key\_id](#output\_ssh\_key\_id) | The ID of the ssh key |
+| <a name="output_test_var_value"></a> [test\_var\_value](#output\_test\_var\_value) | hpc\_reservation\_id |
 | <a name="output_vpc_crn"></a> [vpc\_crn](#output\_vpc\_crn) | CRN of VPC created |
 | <a name="output_vpc_id"></a> [vpc\_id](#output\_vpc\_id) | ID of VPC created |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
