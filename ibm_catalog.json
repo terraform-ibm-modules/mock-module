@@ -14,7 +14,8 @@
                 "ibm_created",
                 "terraform",
                 "module",
-                "compute"
+                "compute",
+                "compute_classic"
             ],
             "keywords": [
                 "mock",
@@ -111,7 +112,9 @@
                 "target_terraform",
                 "terraform",
                 "converged_infra",
-                "solution"
+                "solution",
+                "compute",
+                "compute_classic"
             ],
             "keywords": [
                 "vpc",
