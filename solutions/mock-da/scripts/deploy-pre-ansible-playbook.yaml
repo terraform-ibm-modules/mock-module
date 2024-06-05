@@ -1,0 +1,76 @@
+- name: deploy pre playbook
+  hosts: localhost
+  tasks:
+    - name: get running ansible user
+      set_fact:
+        workspace_id: "{{ lookup('env', 'workspace_id') }}"
+        IAM_TOKEN: "{{ lookup('env', 'IAM_TOKEN') }}"
+        REFRESH_TOKEN: "{{ lookup('env', 'REFRESH_TOKEN') }}"
+    - name: Get Jobs ID
+      uri:
+        url: "https://schematics.cloud.ibm.com/v2/jobs?resource=workspaces&workspace_id={{ workspace_id }}"
+        method: GET
+        headers:
+          Authorization: "{{ IAM_TOKEN }}"
+      register: jobs_data
+    - name: Set Job ID
+      set_fact:
+        job_id: "{{ jobs_data.json.jobs[0].id }}"
+    - name: Get Statefile
+      uri:
+        url: "https://schematics.cloud.ibm.com/v2/jobs/{{ job_id }}/files?file_type=state_file"
+        method: GET
+        headers:
+          Authorization: "{{ IAM_TOKEN }}"
+      register: result
+    - name: Set Statefile
+      set_fact:
+        statefile: "{{ result.json.file_content | to_json }}"
+    - name: Check for old version of landing zone
+      ansible.builtin.shell: |
+        ADDRESS_LIST=$(echo {{ statefile }} | jq -r '.resources[] | select(.type == "ibm_resource_group") | .module')
+        LENGTH=$(echo {{ statefile }} | jq -r --arg address "${ADDRESS_LIST}" '.resources[] | select((.type == "ibm_resource_group") and (.module == $address)) | .instances | length')
+
+        for (( i=0; i<LENGTH ; i++ )); do
+            NAME=$(echo {{ statefile }} | jq -r --arg address "${ADDRESS_LIST}" --arg i "${i}" '.resources[] | select((.type == "ibm_resource_group") and (.module == $address)) | .instances[$i | tonumber ] | .attributes.name')
+            SOURCE="${ADDRESS_LIST}.ibm_resource_group.resource_group[\"${NAME}-rg\"]"
+            DESTINATION="${ADDRESS_LIST}.ibm_resource_group.resource_group[\"${NAME}-resource-group\"]"
+
+            MOVED_PARAMS+=("$SOURCE, $DESTINATION")
+        done
+        for x in "${!MOVED_PARAMS[@]}"; do
+            echo "${MOVED_PARAMS[$x]}"
+        done
+      register: move_list
+    - name: Initiate Commands List
+      set_fact:
+        commands: []
+    - name: Add new JSON Objects to List
+      set_fact:
+        commands: "{{ commands +
+          [{ 'command': 'state mv',
+          'command_params': item,
+          'command_name': 'Move' + count|string,
+          'command_onerror': 'abort'}] }}"
+      loop: "{{ move_list.stdout_lines }}"
+      loop_control:
+        index_var: count
+    - name: Create complete JSON body
+      set_fact:
+        commands: "{{
+          { 'commands': commands ,
+          'operation_name': 'workspace Command',
+          'description': 'Executing command'}
+          }}"
+    - name: Run Terraform commands
+      uri:
+        url: "https://schematics.cloud.ibm.com/v1/workspaces/{{ workspace_id }}/commands"
+        method: PUT
+        headers:
+          Authorization: "{{ IAM_TOKEN }}"
+          refresh_token: "{{ REFRESH_TOKEN }}"
+          Content-Type: application/json
+        body: "{{ commands }}"
+        body_format: json
+        status_code: [200, 202]
+      register: result
