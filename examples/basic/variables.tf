@@ -27,3 +27,27 @@ variable "resource_tags" {
   description = "Optional list of tags to be added to created resources"
   default     = []
 }
+
+variable "hpc_reservation_id" {
+  type        = string
+  description = "hpc_reservation_id"
+  default     = "test"
+}
+
+variable "acme_key" {
+  type        = string
+  description = "acme_key"
+  default     = "test1"
+}
+
+variable "logdna_key" {
+  type        = string
+  description = "logdna_key"
+  default     = "test2"
+}
+
+variable "sdnlb_key" {
+  type        = string
+  description = "sdnlb_key"
+  default     = "test3"
+}

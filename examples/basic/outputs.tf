@@ -11,3 +11,8 @@ output "fingerprint" {
   description = "SSH key Fingerprint info"
   value       = module.mock_module.fingerprint
 }
+
+output "test_var_value" {
+  description = "hpc_reservation_id"
+  value       = module.mock_module.test_var_value
+}

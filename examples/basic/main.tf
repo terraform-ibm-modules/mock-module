@@ -23,8 +23,12 @@ locals {
 #############################################################################
 
 module "mock_module" {
-  source            = "../.."
-  name              = var.prefix
-  resource_group_id = local.resource_group_id
-  tags              = var.resource_tags
+  source             = "../.."
+  name               = var.prefix
+  resource_group_id  = local.resource_group_id
+  tags               = var.resource_tags
+  hpc_reservation_id = var.hpc_reservation_id
+  acme_key           = var.acme_key
+  logdna_key         = var.logdna_key
+  sdnlb_key          = var.sdnlb_key
 }
