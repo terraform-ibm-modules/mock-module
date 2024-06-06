@@ -21,4 +21,5 @@ output "vpc_crn" {
 output "test_var_value" {
   description = "hpc_reservation_id"
   value       = local.test_var
+  sensitive   = true
 }

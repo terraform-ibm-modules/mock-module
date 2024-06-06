@@ -25,5 +25,5 @@ resource "ibm_is_vpc" "vpc" {
 }
 
 locals {
-  test_var = concat([var.hpc_reservation_id, var.acme_key], [var.logdna_key, var.sdnlb_key])
+  test_var = concat([var.hpc_reservation_id, var.acme_key], [var.logdna_provision_key, var.sdnlb_apikey])
 }

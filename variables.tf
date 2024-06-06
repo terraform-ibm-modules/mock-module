@@ -37,14 +37,14 @@ variable "acme_key" {
   default     = "test"
 }
 
-variable "logdna_key" {
+variable "logdna_provision_key" {
   type        = string
-  description = "logdna_key"
+  description = "logdna_provision_key"
   default     = "test"
 }
 
-variable "sdnlb_key" {
+variable "sdnlb_apikey" {
   type        = string
-  description = "sdnlb_key"
+  description = "sdnlb_apikey"
   default     = "test"
 }

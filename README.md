@@ -74,10 +74,10 @@ No modules.
 | <a name="input_acme_key"></a> [acme\_key](#input\_acme\_key) | acme\_key | `string` | `"test"` | no |
 | <a name="input_classic_access"></a> [classic\_access](#input\_classic\_access) | Enable VPC Classic Access. Note: only one VPC per region can have classic access | `bool` | `false` | no |
 | <a name="input_hpc_reservation_id"></a> [hpc\_reservation\_id](#input\_hpc\_reservation\_id) | hpc\_reservation\_id | `string` | `"test"` | no |
-| <a name="input_logdna_key"></a> [logdna\_key](#input\_logdna\_key) | logdna\_key | `string` | `"test"` | no |
+| <a name="input_logdna_provision_key"></a> [logdna\_provision\_key](#input\_logdna\_provision\_key) | logdna\_provision\_key | `string` | `"test"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the SSH Key. | `string` | n/a | yes |
 | <a name="input_resource_group_id"></a> [resource\_group\_id](#input\_resource\_group\_id) | ID of resource group. If not specified, Default resource group used. | `string` | `null` | no |
-| <a name="input_sdnlb_key"></a> [sdnlb\_key](#input\_sdnlb\_key) | sdnlb\_key | `string` | `"test"` | no |
+| <a name="input_sdnlb_apikey"></a> [sdnlb\_apikey](#input\_sdnlb\_apikey) | sdnlb\_apikey | `string` | `"test"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tags for the SSH Key. | `list(string)` | `[]` | no |
 
 ### Outputs
