@@ -61,14 +61,14 @@
           'operation_name': 'workspace Command',
           'description': 'Executing command'}
           }}"
-    # - name: Run Terraform commands
-    #   uri:
-    #     url: "https://schematics.test.cloud.ibm.com/v1/workspaces/{{ workspace_id }}/commands"
-    #     method: PUT
-    #     headers:
-    #       Authorization: "{{ IAM_TOKEN }}"
-    #       Content-Type: application/json
-    #     body: "{{ commands }}"
-    #     body_format: json
-    #     status_code: [200, 202]
-    #   register: result
+    - name: Run Terraform commands
+      uri:
+        url: "https://schematics.test.cloud.ibm.com/v1/workspaces/{{ workspace_id }}/commands"
+        method: PUT
+        headers:
+          Authorization: "{{ IAM_TOKEN }}"
+          Content-Type: application/json
+        body: "{{ commands }}"
+        body_format: json
+        status_code: [200, 202]
+      register: result
