@@ -7,7 +7,7 @@
         IAM_TOKEN: "{{ lookup('env', 'IAM_TOKEN') }}"
     - name: Get Jobs ID
       uri:
-        url: "https://schematics.cloud.ibm.com/v2/jobs?resource=workspaces&workspace_id={{ workspace_id }}"
+        url: "https://schematics.test.cloud.ibm.com/v2/jobs?resource=workspaces&workspace_id={{ workspace_id }}"
         method: GET
         headers:
           Authorization: "{{ IAM_TOKEN }}"
@@ -17,7 +17,7 @@
         job_id: "{{ jobs_data.json.jobs[0].id }}"
     - name: Get Statefile
       uri:
-        url: "https://schematics.cloud.ibm.com/v2/jobs/{{ job_id }}/files?file_type=state_file"
+        url: "https://schematics.test.cloud.ibm.com/v2/jobs/{{ job_id }}/files?file_type=state_file"
         method: GET
         headers:
           Authorization: "{{ IAM_TOKEN }}"
@@ -63,7 +63,7 @@
           }}"
     - name: Run Terraform commands
       uri:
-        url: "https://schematics.cloud.ibm.com/v1/workspaces/{{ workspace_id }}/commands"
+        url: "https://schematics.test.cloud.ibm.com/v1/workspaces/{{ workspace_id }}/commands"
         method: PUT
         headers:
           Authorization: "{{ IAM_TOKEN }}"
