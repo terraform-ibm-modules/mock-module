@@ -27,11 +27,11 @@
         statefile: "{{ result.json.file_content | string }}"
     - name: Check for old version of landing zone
       ansible.builtin.shell: |
-        ADDRESS_LIST=$(echo "{{ statefile }}" | jq -r '.resources[] | select(.type == "ibm_resource_group") | .module')
-        LENGTH=$(echo "{{ statefile }}" | jq -r --arg address "${ADDRESS_LIST}" '.resources[] | select((.type == "ibm_resource_group") and (.module == $address)) | .instances | length')
+        ADDRESS_LIST=$(echo '{{ statefile }}' | jq -r '.resources[] | select(.type == "ibm_resource_group") | .module')
+        LENGTH=$(echo '{{ statefile }}' | jq -r --arg address "${ADDRESS_LIST}" '.resources[] | select((.type == "ibm_resource_group") and (.module == $address)) | .instances | length')
 
         for (( i=0; i<LENGTH ; i++ )); do
-            NAME=$(echo "{{ statefile }}" | jq -r --arg address "${ADDRESS_LIST}" --arg i "${i}" '.resources[] | select((.type == "ibm_resource_group") and (.module == $address)) | .instances[$i | tonumber ] | .attributes.name')
+            NAME=$(echo '{{ statefile }}' | jq -r --arg address "${ADDRESS_LIST}" --arg i "${i}" '.resources[] | select((.type == "ibm_resource_group") and (.module == $address)) | .instances[$i | tonumber ] | .attributes.name')
             SOURCE="${ADDRESS_LIST}.ibm_resource_group.resource_group[\"${NAME}-rg\"]"
             DESTINATION="${ADDRESS_LIST}.ibm_resource_group.resource_group[\"${NAME}-resource-group\"]"
 
