@@ -4,7 +4,7 @@
   "resource_tags": $TAGS,
   "prefix": $PREFIX,
   "hpc_reservation_id": $HPC_RESERVATION_ID,
-  "sdnlb_key": $SDNLB_KEY,
+  "sdnlb_apikey": $SDNLB_APIKEY,
   "acme_key": $ACME_KEY,
-  "logdna_key": $LOGDNA_KEY
+  "logdna_provision_key": $LOGDNA_PROVISION_KEY
 }
