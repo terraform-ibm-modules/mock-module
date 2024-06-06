@@ -203,20 +203,6 @@
                             }
                         ]
                     },
-                    "configuration": [
-                        {
-                            "custom_config": {
-                                "config_constraints": {
-                                    "generationType": "2"
-                                },
-                                "grouping": "deployment",
-                                "original_grouping": "deployment",
-                                "type": "vpc_region"
-                            },
-                            "key": "region",
-                            "required": true
-                        }
-                    ],
                     "iam_permissions": [
                         {
                             "role_crns": [
