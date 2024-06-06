@@ -15,4 +15,5 @@ output "fingerprint" {
 output "test_var_value" {
   description = "hpc_reservation_id"
   value       = module.mock_module.test_var_value
+  sensitive   = true
 }
