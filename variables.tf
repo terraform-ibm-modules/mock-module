@@ -24,3 +24,27 @@ variable "classic_access" {
   type        = bool
   default     = false
 }
+
+variable "hpc_reservation_id" {
+  type        = string
+  description = "hpc_reservation_id"
+  default     = "test"
+}
+
+variable "acme_key" {
+  type        = string
+  description = "acme_key"
+  default     = "test"
+}
+
+variable "logdna_provision_key" {
+  type        = string
+  description = "logdna_provision_key"
+  default     = "test"
+}
+
+variable "sdnlb_apikey" {
+  type        = string
+  description = "sdnlb_apikey"
+  default     = "test"
+}

@@ -2,5 +2,9 @@
   "ibmcloud_api_key": $VALIDATION_APIKEY,
   "resource_group": $RG_NAME,
   "resource_tags": $TAGS,
-  "prefix": $PREFIX
+  "prefix": $PREFIX,
+  "hpc_reservation_id": $HPC_RESERVATION_ID,
+  "sdnlb_apikey": $SDNLB_APIKEY,
+  "acme_key": $ACME_KEY,
+  "logdna_provision_key": $LOGDNA_PROVISION_KEY
 }
