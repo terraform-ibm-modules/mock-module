@@ -16,7 +16,7 @@
       register: result
     - name: Set Statefile
       set_fact:
-        statefile: "{{ result.json | string }}"
+        statefile: "{{ result.json | to_json }}"
     - name: Check for old version of landing zone
       ansible.builtin.shell: |
         ADDRESS_LIST=$(echo '{{ statefile }}' | jq -r '.resources[] | select(.type == "ibm_resource_group") | .module')
