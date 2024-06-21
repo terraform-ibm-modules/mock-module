@@ -14,13 +14,3 @@ variable "tags" {
   type        = list(string)
   default     = []
 }
-
-#############################################################################
-# VPC Variables
-##############################################################################
-
-variable "classic_access" {
-  description = "Enable VPC Classic Access. Note: only one VPC per region can have classic access"
-  type        = bool
-  default     = false
-}
