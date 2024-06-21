@@ -8,12 +8,3 @@ output "fingerprint" {
   value       = ibm_is_ssh_key.ssh_key.fingerprint
 }
 
-output "vpc_id" {
-  description = "ID of VPC created"
-  value       = ibm_is_vpc.vpc.id
-}
-
-output "vpc_crn" {
-  description = "CRN of VPC created"
-  value       = ibm_is_vpc.vpc.crn
-}

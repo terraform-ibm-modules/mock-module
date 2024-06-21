@@ -17,16 +17,6 @@ output "test" {
   value       = var.testing
 }
 
-output "vpc_id" {
-  description = "ID of VPC created"
-  value       = module.mock_module.vpc_id
-}
-
-output "vpc_crn" {
-  description = "CRN of VPC created"
-  value       = module.mock_module.vpc_crn
-}
-
 output "resource_group" {
   description = "Resource Group Name"
   value       = var.resource_group != null ? var.resource_group : "${var.prefix}-rg"
