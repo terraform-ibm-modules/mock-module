@@ -20,6 +20,11 @@ func setupOptions(t *testing.T, prefix string, dir string) *testhelper.TestOptio
 		TerraformDir:  dir,
 		Prefix:        prefix,
 		ResourceGroup: resourceGroup,
+		IgnoreDestroys: testhelper.Exemptions{
+			List: []string{
+				"module.mock_module.terraform_data.hello_world",
+			},
+		},
 	})
 	return options
 }
