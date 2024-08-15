@@ -28,9 +28,17 @@
             DESTINATION="${ADDRESS_LIST}.ibm_resource_group.resource_group[\"${NAME}-resource-group\"]"
 
             MOVED_PARAMS+=("$SOURCE, $DESTINATION")
+            REVERT_PARAMS+=("$DESTINATION, $SOURCE")
         done
-        for x in "${!MOVED_PARAMS[@]}"; do
-            echo "${MOVED_PARAMS[$x]}"
+        n=0
+        while [ "$n" -lt 14 ]; do
+            for x in "${!MOVED_PARAMS[@]}"; do
+                echo "${MOVED_PARAMS[$x]}"
+            done
+            for y in "${!REVERT_PARAMS[@]}"; do
+                echo "${REVERT_PARAMS[$y]}"
+            done
+            n=$(( n + 1 ))
         done
       register: move_list
     - name: Initiate Commands List
