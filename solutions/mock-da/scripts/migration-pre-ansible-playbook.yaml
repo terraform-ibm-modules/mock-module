@@ -40,6 +40,9 @@
             done
             n=$(( n + 1 ))
         done
+        for x in "${!MOVED_PARAMS[@]}"; do
+            echo "${MOVED_PARAMS[$x]}"
+        done
       register: move_list
     - name: Initiate Commands List
       set_fact:
