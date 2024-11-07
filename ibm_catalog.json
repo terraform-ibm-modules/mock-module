@@ -103,7 +103,7 @@
     },
     {
       "name": "deploy-arch-ibm-mock-module",
-      "label": "Mock DA",
+      "label": "Mock DA - renamed3",
       "product_kind": "solution",
       "tags": [
         "ibm_created",
