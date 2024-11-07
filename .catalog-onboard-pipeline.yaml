@@ -15,7 +15,7 @@ offerings:
   #       validation_type: projects
   - name: deploy-arch-ibm-mock-module
     ignore_code_freeze: true
-    include_git_submodules: true
+    include_git_submodules: false
     kind: solution
     catalog_id: d980f68c-b098-4696-a05d-decbb0c488aa
     offering_id: 98c88013-08fe-4c20-b327-ddd226317d31
@@ -27,7 +27,7 @@ offerings:
       #   destroy_workspace_on_failure: false
       #   import_only: true
       - name: standard
-        mark_ready: true
+        mark_ready: false
         install_type: fullstack
         validation_type: schematics
         scc:
