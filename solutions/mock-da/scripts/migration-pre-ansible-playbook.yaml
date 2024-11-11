@@ -31,7 +31,7 @@
             REVERT_PARAMS+=("$DESTINATION, $SOURCE")
         done
         n=0
-        while [ "$n" -lt 186 ]; do
+        while [ "$n" -lt 162 ]; do
             for x in "${!MOVED_PARAMS[@]}"; do
                 echo "${MOVED_PARAMS[$x]}"
             done
