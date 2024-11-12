@@ -28,7 +28,7 @@ variable "resource_tags" {
   default     = []
 }
 
-variable "testing" {
+variable "testing_new" {
   type        = list(string)
   description = "Test variable to test setting list of strings to null"
   default     = null
