@@ -1,7 +1,7 @@
 locals {
   rg_map = {
     for rg in var.resource_group_names :
-    "${rg}-rg" => {
+    "${rg}-resource-group" => {
       name = rg
     }
   }
