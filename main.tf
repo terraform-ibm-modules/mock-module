@@ -5,6 +5,7 @@ locals {
       name = rg
     }
   }
+  tags = var.tags != null ? join(",", var.tags) : "none"
 }
 resource "ibm_resource_group" "resource_group" {
   for_each = local.rg_map
