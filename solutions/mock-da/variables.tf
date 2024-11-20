@@ -16,7 +16,7 @@ variable "resource_group_names" {
   default     = ["mock1", "mock2"]
 }
 
-variable "resource_tags" {
+variable "tags" {
   type        = list(string)
   description = "Optional list of tags to be added to created resources"
   default     = []
