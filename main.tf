@@ -2,7 +2,7 @@ locals {
   resource_group_id = var.resource_group_id != null ? var.resource_group_id : "null"
   tags              = var.tags != null ? join(",", var.tags) : "none"
   agent_version     = "1.3.0" # datasource: icr.io/ibm/observe/logs-agent-helm
-  test_version      = "v0.10.7" # datasource: icr.io/ibm-iac/external-secrets
+  test_version      = "v0.10.6" # datasource: icr.io/ibm-iac/external-secrets
 }
 # Create RSA key of size 4096 bits
 resource "tls_private_key" "tls_key" {
