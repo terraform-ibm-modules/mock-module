@@ -8,7 +8,6 @@
       "matchStrings": [
         "[\\w-]+_version\\s*=\\s*\"(?<currentValue>[\\w.-]+)\"\\s*# datasource: (?<depName>[^\\s]+)\\s*( versioning=(?<versioning>.*?))?\\s.*?"
       ],
-      "matchStrings": ["agent_version=(?<currentValue>.*?)\\n"],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
       "datasourceTemplate": "docker"
     }
