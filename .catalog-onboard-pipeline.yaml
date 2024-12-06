@@ -35,7 +35,7 @@ offerings:
           region: us-south
       - name: quickstart
         mark_ready: true
-        install_type: extension
+        install_type: fullstack
         validation_type: schematics
         validation_rg: temp
         pre_validation: tests/scripts/pre-validation.sh
