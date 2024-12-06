@@ -286,8 +286,9 @@
         {
           "label": "QuickStart Mock",
           "name": "quickstart",
-          "install_type": "extension",
+          "install_type": "fullstack",
           "working_directory": "solutions/mock-da-extension",
+          "dependency_version_2": true,
           "dependencies": [
             {
               "flavors": [
