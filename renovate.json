@@ -4,9 +4,9 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["\\.tf$"],
+      "fileMatch": ["\\.yaml$"],
       "matchStrings": [
-        "[\\w-]+_version\\s*=\\s*\"(?<currentValue>[\\w.-]+)\"\\s*# datasource: (?<depName>[^\\s]+)\\s*( versioning=(?<versioning>.*?))?\\s.*?"
+        "[\\w-]+image\\s*: \\s*\"(?<currentValue>[\\w.-]+)\"\\s*# datasource: (?<depName>[^\\s]+)\\s*( versioning=(?<versioning>.*?))?\\s.*?"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
       "datasourceTemplate": "docker"
