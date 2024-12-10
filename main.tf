@@ -8,12 +8,12 @@
 #   rsa_bits  = 4096
 # }
 
-resource "terraform_data" "hello_world" {
-  triggers_replace = {
-    always_run = timestamp()
-  }
+# resource "terraform_data" "hello_world" {
+#   triggers_replace = {
+#     always_run = timestamp()
+#   }
 
-  provisioner "local-exec" {
-    command = "echo 'Hello, World!"
-  }
-}
+#   provisioner "local-exec" {
+#     command = "echo 'Hello, World!"
+#   }
+# }
