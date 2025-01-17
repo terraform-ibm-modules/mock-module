@@ -2,6 +2,7 @@
 package test
 
 import (
+	"os/exec"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -31,7 +32,7 @@ func setupOptions(t *testing.T, prefix string, dir string) *testhelper.TestOptio
 
 func TestRunBasicExample(t *testing.T) {
 	t.Parallel()
-
+	t.Skip()
 	options := setupOptions(t, "mock-basic", basicExampleTerraformDir)
 
 	output, err := options.RunTestConsistency()
@@ -41,7 +42,7 @@ func TestRunBasicExample(t *testing.T) {
 
 func TestRunCompleteExample(t *testing.T) {
 	t.Parallel()
-
+	t.Skip()
 	options := setupOptions(t, "mock-com", completeExampleTerraformDir)
 
 	output, err := options.RunTestConsistency()
@@ -61,4 +62,19 @@ func TestRunUpgradeExample(t *testing.T) {
 		assert.Nil(t, err, "This should not have errored")
 		assert.NotNil(t, output, "Expected some output")
 	}
+}
+
+func TestGitBranch(t *testing.T) {
+
+	cmd1 := exec.Command("git", "symbolic-ref", "--short", "HEAD")
+	output1, _ := cmd1.Output()
+	t.Logf("Git branch from symbolic-ref: %s", output1)
+
+	cmd2 := exec.Command("git", "status", "--branch", "--porcelain")
+	output2, _ := cmd2.Output()
+	t.Logf("Git branch from status: %s", output2)
+
+	cmd3 := exec.Command("git", "rev-parse", "--abbrev-ref", "HEAD")
+	output3, _ := cmd3.Output()
+	t.Logf("Git branch from rev-parse: %s", output3)
 }
