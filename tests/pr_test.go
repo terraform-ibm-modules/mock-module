@@ -2,6 +2,7 @@
 package test
 
 import (
+	"os"
 	"os/exec"
 	"testing"
 
@@ -77,4 +78,10 @@ func TestGitBranch(t *testing.T) {
 	cmd3 := exec.Command("git", "rev-parse", "--abbrev-ref", "HEAD")
 	output3, _ := cmd3.Output()
 	t.Logf("Git branch from rev-parse: %s", output3)
+
+	envHead := os.Getenv("GITHUB_HEAD_REF")
+	envBase := os.Getenv("GITHUB_BASE_REF")
+
+	t.Logf("Git branch from env: %s", envHead)
+	t.Logf("Git base from env: %s", envBase)
 }
