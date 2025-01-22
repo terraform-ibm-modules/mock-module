@@ -249,6 +249,96 @@
                   "value": "public-and-private"
                 }
               ]
+            },
+            {
+              "key": "access_tags",
+              "display_name": "array",
+              "custom_config": {
+                  "type": "array",
+                  "grouping": "deployment",
+                  "original_grouping": "deployment",
+                  "config_constraints": {
+                      "type": "string"
+                  }
+              }
+            },
+            {
+              "key": "allowed_ip_addresses",
+              "display_name": "array",
+              "required": true,
+              "custom_config": {
+                "type": "array",
+                "grouping": "deployment",
+                "original_grouping": "deployment",
+                "config_constraints": {
+                  "type": "mixed"
+                }
+              }
+            },
+            {
+              "key": "activity_tracker_locations",
+              "display_name": "array",
+              "required": true,
+              "custom_config": {
+                "type": "array",
+                "grouping": "deployment",
+                "original_grouping": "deployment",
+                "config_constraints": {
+                  "type": "string"
+                }
+              }
+            },
+            {
+              "key": "trusted_profile_roles",
+              "display_name": "array",
+              "required": true,
+              "custom_config": {
+                "type": "array",
+                "grouping": "deployment",
+                "original_grouping": "deployment",
+                "config_constraints": {
+                  "type": "string"
+                }
+              }
+            },
+            {
+              "key": "cos_bucket_access_tags",
+              "display_name": "array",
+              "required": true,
+              "custom_config": {
+                "type": "array",
+                "grouping": "deployment",
+                "original_grouping": "deployment",
+                "config_constraints": {
+                  "type": "string"
+                }
+              }
+            },
+            {
+              "key": "cos_instance_access_tags",
+              "display_name": "array",
+              "required": true,
+              "custom_config": {
+                "type": "array",
+                "grouping": "deployment",
+                "original_grouping": "deployment",
+                "config_constraints": {
+                  "type": "string"
+                }
+              }
+            },
+            {
+              "key": "resource_tags",
+              "display_name": "array",
+              "required": true,
+              "custom_config": {
+                "type": "array",
+                "grouping": "deployment",
+                "original_grouping": "deployment",
+                "config_constraints": {
+                  "type": "string"
+                }
+              }
             }
           ],
           "iam_permissions": [
@@ -281,84 +371,6 @@
                 "description": "This is a mock module diagram"
               }
             ]
-          }
-        },
-        {
-          "key": "allowed_ip_addresses",
-          "display_name": "array",
-          "required": true,
-          "custom_config": {
-            "type": "array",
-            "grouping": "deployment",
-            "original_grouping": "deployment",
-            "config_constraints": {
-              "type": "mixed"
-            }
-          }
-        },
-        {
-          "key": "activity_tracker_locations",
-          "display_name": "array",
-          "required": true,
-          "custom_config": {
-            "type": "array",
-            "grouping": "deployment",
-            "original_grouping": "deployment",
-            "config_constraints": {
-              "type": "string"
-            }
-          }
-        },
-        {
-          "key": "trusted_profile_roles",
-          "display_name": "array",
-          "required": true,
-          "custom_config": {
-            "type": "array",
-            "grouping": "deployment",
-            "original_grouping": "deployment",
-            "config_constraints": {
-              "type": "string"
-            }
-          }
-        },
-        {
-          "key": "cos_bucket_access_tags",
-          "display_name": "array",
-          "required": true,
-          "custom_config": {
-            "type": "array",
-            "grouping": "deployment",
-            "original_grouping": "deployment",
-            "config_constraints": {
-              "type": "string"
-            }
-          }
-        },
-        {
-          "key": "cos_instance_access_tags",
-          "display_name": "array",
-          "required": true,
-          "custom_config": {
-            "type": "array",
-            "grouping": "deployment",
-            "original_grouping": "deployment",
-            "config_constraints": {
-              "type": "string"
-            }
-          }
-        },
-        {
-          "key": "resource_tags",
-          "display_name": "array",
-          "required": true,
-          "custom_config": {
-            "type": "array",
-            "grouping": "deployment",
-            "original_grouping": "deployment",
-            "config_constraints": {
-              "type": "string"
-            }
           }
         }
       ]

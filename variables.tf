@@ -44,3 +44,8 @@ variable "cos_instance_access_tags" {
   description = "A list of access tags applied to the Object Storage instance that this module provisions."
   default     = []
 }
+variable "access_tags" {
+  type        = list(string)
+  description = "A list of access tags to apply to the Databases for Redis instance created by the solution. [Learn more](https://cloud.ibm.com/docs/account?topic=account-access-tags-tutorial)."
+  default     = []
+}
