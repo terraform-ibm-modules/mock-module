@@ -277,7 +277,6 @@
               "display_name": "array",
               "required": true,
               "custom_config": {
-                "type": "array",
                 "grouping": "deployment",
                 "original_grouping": "deployment",
                 "config_constraints": {
