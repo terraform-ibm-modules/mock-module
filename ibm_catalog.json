@@ -271,7 +271,7 @@
                 "grouping": "deployment",
                 "original_grouping": "deployment",
                 "config_constraints": {
-                  "type": "mixed"
+                  "type": "string"
                 }
               }
             },
