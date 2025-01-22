@@ -254,12 +254,9 @@
               "key": "access_tags",
               "display_name": "array",
               "custom_config": {
-                  "type": "array",
-                  "grouping": "deployment",
-                  "original_grouping": "deployment",
-                  "config_constraints": {
-                      "type": "string"
-                  }
+                "config_constraints": {
+                  "type": "string"
+                }
               }
             },
             {
