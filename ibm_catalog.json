@@ -254,6 +254,8 @@
               "key": "access_tags",
               "display_name": "array",
               "custom_config": {
+                "grouping": "deployment",
+                "original_grouping": "deployment",
                 "config_constraints": {
                   "type": "string"
                 }
@@ -264,7 +266,6 @@
               "display_name": "array",
               "required": true,
               "custom_config": {
-                "type": "array",
                 "grouping": "deployment",
                 "original_grouping": "deployment",
                 "config_constraints": {
@@ -289,7 +290,6 @@
               "display_name": "array",
               "required": true,
               "custom_config": {
-                "type": "array",
                 "grouping": "deployment",
                 "original_grouping": "deployment",
                 "config_constraints": {
@@ -302,7 +302,6 @@
               "display_name": "array",
               "required": true,
               "custom_config": {
-                "type": "array",
                 "grouping": "deployment",
                 "original_grouping": "deployment",
                 "config_constraints": {
@@ -315,7 +314,6 @@
               "display_name": "array",
               "required": true,
               "custom_config": {
-                "type": "array",
                 "grouping": "deployment",
                 "original_grouping": "deployment",
                 "config_constraints": {
@@ -328,7 +326,6 @@
               "display_name": "array",
               "required": true,
               "custom_config": {
-                "type": "array",
                 "grouping": "deployment",
                 "original_grouping": "deployment",
                 "config_constraints": {
