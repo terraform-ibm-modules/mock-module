@@ -17,3 +17,13 @@ resource "terraform_data" "hello_world" {
     command = "echo 'Hello, World! from ${var.name} in RG_id ${local.resource_group_id} with tags ${local.tags}.'"
   }
 }
+
+resource "terraform_data" "hello_world_add" {
+  triggers_replace = {
+    always_run = timestamp()
+  }
+
+  provisioner "local-exec" {
+    command = "echo 'Hello, World ADDED FOR TEST! from ${var.name} in RG_id ${local.resource_group_id} with tags ${local.tags}.'"
+  }
+}
