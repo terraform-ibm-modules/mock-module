@@ -1,0 +1,5 @@
+go 1.22.4
+
+use .
+
+replace github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper => github.com/toddgiguere/ibmcloud-terratest-wrapper v1.46.0-alpha
