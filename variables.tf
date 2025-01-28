@@ -49,3 +49,8 @@ variable "access_tags" {
   description = "A list of access tags to apply to the Databases for Redis instance created by the solution. [Learn more](https://cloud.ibm.com/docs/account?topic=account-access-tags-tutorial)."
   default     = []
 }
+variable "tags" {
+  type        = list(any)
+  description = "The list of tags to be added to the Databases for Redis instance."
+  default     = []
+}
