@@ -50,7 +50,7 @@ variable "access_tags" {
   default     = []
 }
 variable "tags" {
-  type        = list(any)
+  type        = list(string)
   description = "The list of tags to be added to the Databases for Redis instance."
   default     = []
 }
