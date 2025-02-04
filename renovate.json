@@ -17,7 +17,7 @@
       "fileMatch": ["variables.tf$"],
       "datasourceTemplate": "helm_release",
       "matchStrings": [
-        "default\\s*=\\s*\"(?<currentValue>[\\w.-]+)@(?<currentDigest>sha256:[a-f0-9]+)\"\\s*# helm_release datasource: (?<depName>[^\\s]+)"
+        "default\\s*=\\s*\"(?<currentValue>.*?)\"\\s*# helm_release datasource: (?<depName>[^\\s]+)"
       ]
     }
   ],
