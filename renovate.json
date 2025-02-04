@@ -1,15 +1,39 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["local>terraform-ibm-modules/common-dev-assets:commonRenovateConfig"],
+  "extends": ["github>terraform-ibm-modules/common-dev-assets:commonRenovateConfig"],
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["\\.yaml$"],
+      "description": "Update docker image digest to latest in variables.tf",
+      "fileMatch": ["variables.tf$"],
+      "datasourceTemplate": "docker",
       "matchStrings": [
-        "[\\w-]+image\\s*: \\s*\"(?<currentValue>[\\w.-]+)\"\\s*# datasource: (?<depName>[^\\s]+)\\s*( versioning=(?<versioning>.*?))?\\s.*?"
-      ],
-      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
-      "datasourceTemplate": "docker"
+        "default\\s*=\\s*\"(?<currentValue>[\\w.-]+)@(?<currentDigest>sha256:[a-f0-9]+)\"\\s*# docker datasource: (?<depName>[^\\s]+)"
+      ]
+    },
+    {
+      "customType": "regex",
+      "description": "Update helm chart version to latest in variables.tf",
+      "fileMatch": ["variables.tf$"],
+      "datasourceTemplate": "helm_release",
+      "matchStrings": [
+        "default\\s*=\\s*\"(?<currentValue>[\\w.-]+)@(?<currentDigest>sha256:[a-f0-9]+)\"\\s*# helm_release datasource: (?<depName>[^\\s]+)"
+      ]
+    }
+  ],
+  "labels": ["renovate"],
+  "packageRules": [
+    {
+      "matchManagers": ["helmv3"],
+      "groupName": "Charts and Images",
+      "commitMessageExtra": "to latest",
+      "group": true
+    },
+    {
+      "matchDatasources": ["docker"],
+      "groupName": "Charts and Images",
+      "commitMessageExtra": "to latest",
+      "group": true
     }
   ]
 }
