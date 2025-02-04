@@ -18,7 +18,7 @@ variable "tags" {
 variable "eso_chart_version" {
   type        = string
   description = "The version of the External Secrets Operator Helm chart."
-  default     = "0.12.0" # helm_release datasource: https://charts.external-secrets.io
+  default     = "0.12.0" # helm datasource: charts.external-secrets.io
 }
 
 variable "eso_image_digest" {
@@ -30,7 +30,7 @@ variable "eso_image_digest" {
 variable "reloader_chart_version" {
   type        = string
   description = "The version of the Reloader Helm chart."
-  default     = "1.2.0" # helm_release datasource: https://stakater.github.io/stakater-charts
+  default     = "1.2.0" # helm datasource: stakater.github.io/stakater-charts
 }
 
 variable "reloader_image_digest" {
