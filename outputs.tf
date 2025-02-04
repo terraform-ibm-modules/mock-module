@@ -3,7 +3,7 @@ output "ssh_key_id" {
   value       = tls_private_key.tls_key.public_key_openssh
 }
 
-output "fingerprints" {
+output "fingerprint" {
   description = "SSH key Fingerprint info"
   value       = tls_private_key.tls_key.public_key_fingerprint_sha256
 }
