@@ -77,7 +77,7 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_fingerprint"></a> [fingerprint](#output\_fingerprint) | SSH key Fingerprint info |
+| <a name="output_fingerprints"></a> [fingerprints](#output\_fingerprints) | SSH key Fingerprint info |
 | <a name="output_ssh_key_id"></a> [ssh\_key\_id](#output\_ssh\_key\_id) | The ID of the ssh key |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
