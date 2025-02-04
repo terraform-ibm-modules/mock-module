@@ -24,7 +24,7 @@ variable "eso_chart_version" {
 variable "eso_image_digest" {
   type        = string
   description = "The image digest in the format sha256:xxxxx... for ESO image to deploy. If not provided, a default value will be used."
-  default     = "v0.11.0-ubi@sha256:41b6f0118fe9f3c57a20e33d42cb6006aaeb33561411db3c42a468201dfeae63" # docker datasource: ghcr.io/external-secrets/external-secrets
+  default     = "v0.14.0-ubi@sha256:492d29ffe707422ee4cbcf949ef3e317bd2b15b3c728a30c8c03a5a0567030c3" # docker datasource: ghcr.io/external-secrets/external-secrets
 }
 
 variable "reloader_chart_version" {
@@ -36,5 +36,5 @@ variable "reloader_chart_version" {
 variable "reloader_image_digest" {
   type        = string
   description = "The image digest in the format sha256:xxxxx... the reloader image to deploy. If not provided, a default value will be used."
-  default     = "v1.2.0-ubi@sha256:10253ddd79b8d681287a0122b379d41a026d3731e2bfac6c7b60b86e2dd57111" # docker datasource: ghcr.io/stakater/reloader
+  default     = "v1.2.1-ubi@sha256:80a557100c6835c7e3c9842194250c9c4ca78f43200bc3a93a32e5b105ad11bb" # docker datasource: ghcr.io/stakater/reloader
 }
