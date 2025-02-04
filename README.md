@@ -70,10 +70,10 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_eso_chart_version"></a> [eso\_chart\_version](#input\_eso\_chart\_version) | The version of the External Secrets Operator Helm chart. | `string` | `"0.12.0"` | no |
-| <a name="input_eso_image_digest"></a> [eso\_image\_digest](#input\_eso\_image\_digest) | The image digest in the format sha256:xxxxx... for ESO image to deploy. If not provided, a default value will be used. | `string` | `"v0.11.0-ubi@sha256:41b6f0118fe9f3c57a20e33d42cb6006aaeb33561411db3c42a468201dfeae63"` | no |
+| <a name="input_eso_image_digest"></a> [eso\_image\_digest](#input\_eso\_image\_digest) | The image digest in the format sha256:xxxxx... for ESO image to deploy. If not provided, a default value will be used. | `string` | `"v0.14.0-ubi@sha256:492d29ffe707422ee4cbcf949ef3e317bd2b15b3c728a30c8c03a5a0567030c3"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the SSH Key. | `string` | n/a | yes |
 | <a name="input_reloader_chart_version"></a> [reloader\_chart\_version](#input\_reloader\_chart\_version) | The version of the Reloader Helm chart. | `string` | `"1.2.0"` | no |
-| <a name="input_reloader_image_digest"></a> [reloader\_image\_digest](#input\_reloader\_image\_digest) | The image digest in the format sha256:xxxxx... the reloader image to deploy. If not provided, a default value will be used. | `string` | `"v1.2.0-ubi@sha256:10253ddd79b8d681287a0122b379d41a026d3731e2bfac6c7b60b86e2dd57111"` | no |
+| <a name="input_reloader_image_digest"></a> [reloader\_image\_digest](#input\_reloader\_image\_digest) | The image digest in the format sha256:xxxxx... the reloader image to deploy. If not provided, a default value will be used. | `string` | `"v1.2.1-ubi@sha256:80a557100c6835c7e3c9842194250c9c4ca78f43200bc3a93a32e5b105ad11bb"` | no |
 | <a name="input_resource_group_id"></a> [resource\_group\_id](#input\_resource\_group\_id) | ID of resource group. If not specified, Default resource group used. | `string` | `null` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tags for the SSH Key. | `list(string)` | `[]` | no |
 
