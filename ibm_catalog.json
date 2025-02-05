@@ -335,6 +335,30 @@
             },
             {
               "key": "tags"
+            },
+            {
+              "key": "secrets_manager_endpoint_type",
+              "options": [
+                {
+                  "displayname": "private",
+                  "value": "private"
+                },
+                {
+                  "displayname": "public",
+                  "value": "public"
+                }
+              ]
+            },
+            {
+              "key": "toolchain_region",
+              "custom_config": {
+                  "type": "vpc_region",
+                  "grouping": "deployment",
+                  "original_grouping": "deployment",
+                  "config_constraints": {
+                      "generationType": "2"
+                  }
+              }
             }
           ],
           "iam_permissions": [

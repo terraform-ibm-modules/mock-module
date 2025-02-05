@@ -38,6 +38,7 @@ An basic example showing how to consume the module.
 | <a name="input_region"></a> [region](#input\_region) | Region to provision all resources created by this example | `string` | `"us-south"` | no |
 | <a name="input_resource_group"></a> [resource\_group](#input\_resource\_group) | An existing resource group name to use for this example, if unset a new resource group will be created | `string` | `null` | no |
 | <a name="input_resource_tags"></a> [resource\_tags](#input\_resource\_tags) | Optional list of tags to be added to created resources | `list(string)` | `[]` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | The list of tags to be added to the Databases for Redis instance. | `list(string)` | `[]` | no |
 | <a name="input_testing"></a> [testing](#input\_testing) | Test variable to test setting list of strings to null | `list(string)` | `null` | no |
 | <a name="input_trusted_profile_roles"></a> [trusted\_profile\_roles](#input\_trusted\_profile\_roles) | A list of roles given to the trusted profile. | `list(string)` | <pre>[<br/>  "Administrator"<br/>]</pre> | no |
 
