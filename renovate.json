@@ -18,7 +18,10 @@
       "datasourceTemplate": "helm_release",
       "matchStrings": [
         "default\\s*=\\s*\"(?<currentValue>.*?)\"\\s*# helm datasource: (?<depName>[^\\s]+)"
-      ]
+      ],
+      "registryAliases": {
+        "stable": "https://charts.external-secrets.io"
+      }
     }
   ],
   "labels": ["renovate"],
