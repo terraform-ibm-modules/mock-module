@@ -17,11 +17,9 @@
       "fileMatch": ["variables.tf$"],
       "datasourceTemplate": "helm_release",
       "matchStrings": [
-        "default\\s*=\\s*\"(?<currentValue>.*?)\"\\s*# helm datasource: (?<depName>[^\\s]+)"
+        "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?default = \"(?<currentValue>.*)\"\\s"
       ],
-      "registryAliases": {
-        "stable": "https://charts.external-secrets.io"
-      }
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     }
   ],
   "labels": ["renovate"],
