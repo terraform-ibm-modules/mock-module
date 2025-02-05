@@ -32,7 +32,7 @@ variable "reloader_chart_version" {
   type        = string
   description = "The version of the Reloader Helm chart."
   # renovate: datasource=github-releases depName=stakater/Reloader
-  default = "1.2.0"
+  default = "1.2.1"
 }
 
 variable "reloader_image_digest" {
