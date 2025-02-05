@@ -24,7 +24,7 @@
   "labels": ["renovate"],
   "packageRules": [
     {
-      "matchManagers": ["helmv3"],
+      "matchPackageNames": ["external-secrets/external-secrets", "stakater/Reloader"],
       "groupName": "Charts and Images",
       "commitMessageExtra": "to latest",
       "group": true
