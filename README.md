@@ -69,7 +69,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_eso_chart_version"></a> [eso\_chart\_version](#input\_eso\_chart\_version) | The version of the External Secrets Operator Helm chart. | `string` | `"0.12.0"` | no |
+| <a name="input_eso_chart_version"></a> [eso\_chart\_version](#input\_eso\_chart\_version) | The version of the External Secrets Operator Helm chart. | `string` | `"0.14.0"` | no |
 | <a name="input_eso_image_digest"></a> [eso\_image\_digest](#input\_eso\_image\_digest) | The image digest in the format sha256:xxxxx... for ESO image to deploy. If not provided, a default value will be used. | `string` | `"v0.11.0-ubi@sha256:41b6f0118fe9f3c57a20e33d42cb6006aaeb33561411db3c42a468201dfeae63"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the SSH Key. | `string` | n/a | yes |
 | <a name="input_reloader_chart_version"></a> [reloader\_chart\_version](#input\_reloader\_chart\_version) | The version of the Reloader Helm chart. | `string` | `"1.2.0"` | no |

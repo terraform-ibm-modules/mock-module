@@ -19,7 +19,7 @@ variable "eso_chart_version" {
   type        = string
   description = "The version of the External Secrets Operator Helm chart."
   # renovate: datasource=github-tags depName=external-secrets/external-secrets versioning="regex:^helm-chart-(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$"
-  default = "0.12.0"
+  default = "0.14.0"
 }
 
 variable "eso_image_digest" {
