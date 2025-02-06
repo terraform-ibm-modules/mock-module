@@ -257,45 +257,50 @@
             "key": "toolchain_region",
             "options": [
                 {
+                  "displayname": "Osaka(jp-osa)",
+                  "value": "jp-osa"
+                },
+                {
                   "displayname": "Sydney(au-syd)",
                   "value": "au-syd"
-                },
-                {
-                  "displayname": "Sao Paolo(br-sao)",
-                  "value": "br-sao"
-                },
-                {
-                  "displayname": "Canada(ca-tor)",
-                  "value": "ca-tor"
-                },
-                {
-                  "displayname": "Frankfurt(eu-de)",
-                  "value": "eu-de"
-                },
-                {
-                  "displayname": "Madrid(eu-es)",
-                  "value": "eu-es"
-                },
-                {
-                  "displayname": "London(eu-gb)",
-                  "value": "eu-gb"
-                },
-                {
-                  "displayname": "Dallas(us-south)",
-                  "value": "us-south"
-                },
-                {
-                  "displayname": "Washington DC(us-east)",
-                  "value": "us-east"
                 },
                 {
                   "displayname": "Tokyo(jp-tok)",
                   "value": "jp-tok"
                 },
                 {
-                  "displayname": "Osaka(jp-osa)",
-                  "value": "jp-osa"
+                  "displayname": "Frankfurt(eu-de)",
+                  "value": "eu-de"
+                },
+                {
+                  "displayname": "London(eu-gb)",
+                  "value": "eu-gb"
+                },
+                {
+                  "displayname": "Madrid(eu-es)",
+                  "value": "eu-es"
+                },
+                {
+                  "displayname": "Dallas(us-south)",
+                  "value": "us-south"
+                },
+                {
+                  "displayname": "Montreal 01",
+                  "value": "mon01"
+                },
+                {
+                  "displayname": "Toronto(ca-tor)",
+                  "value": "ca-tor"
+                },
+                {
+                  "displayname": "Washington DC(us-east)",
+                  "value": "us-east"
+                },
+                {
+                  "displayname": "Sao Paolo(br-sao)",
+                  "value": "br-sao"
                 }
+
               ]
           },
           {
