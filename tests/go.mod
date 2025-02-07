@@ -2,11 +2,11 @@ module github.com/terraform-ibm-modules/mock-module
 
 go 1.22.4
 
-toolchain go1.23.4
+toolchain go1.23.6
 
 require (
 	github.com/stretchr/testify v1.10.0
-	github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper v1.42.10
+	github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper v1.45.0
 )
 
 require (
