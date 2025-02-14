@@ -40,7 +40,7 @@ data "ibm_container_cluster_config" "cluster_config" {
 
 resource "null_resource" "oc" {
   provisioner "local-exec" {
-    command     = "oc get clusterversion && oc get clusteroperators && oc get po -n openshift-image-registry"
+    command     = "oc describe clusteroperator image-registry"
     interpreter = ["/bin/bash", "-c"]
     environment = {
       KUBECONFIG = data.ibm_container_cluster_config.cluster_config.config_file_path
