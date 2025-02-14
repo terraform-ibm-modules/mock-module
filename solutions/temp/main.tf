@@ -39,6 +39,10 @@ data "ibm_container_cluster_config" "cluster_config" {
 }
 
 resource "null_resource" "oc" {
+  triggers = {
+    always_run = "${timestamp()}"
+  }
+
   provisioner "local-exec" {
     command     = "oc describe clusteroperator image-registry"
     interpreter = ["/bin/bash", "-c"]
