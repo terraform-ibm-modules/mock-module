@@ -282,6 +282,57 @@
               }
             ]
           }
+        }, {
+          "label": "No Op",
+          "name": "no-op",
+          "install_type": "fullstack",
+          "working_directory": "solutions/no-op",
+          "compliance": {
+            "authority": "scc-v3",
+            "profiles": [
+              {
+                "profile_name": "IBM Cloud Framework for Financial Services",
+                "profile_version": "1.7.0"
+              }
+            ]
+          },
+          "configuration": [
+            {
+              "key": "prefix",
+              "required": false
+            }
+          ],
+          "iam_permissions": [
+            {
+              "role_crns": [
+                "crn:v1:bluemix:public:iam::::role:Administrator"
+              ],
+              "service_name": "is.vpc"
+            }
+          ],
+          "architecture": {
+            "descriptions": "mock",
+            "features": [
+              {
+                "title": "Feature 1",
+                "description": "Feature 1 description"
+              },
+              {
+                "title": "Feature 2",
+                "description": "Feature 2 description"
+              }
+            ],
+            "diagrams": [
+              {
+                "diagram": {
+                  "caption": "Mock Module",
+                  "url": "https://www.svgrepo.com/show/532064/rainbow.svg",
+                  "type": "image/svg+xml"
+                },
+                "description": "This is a mock module diagram"
+              }
+            ]
+          }
         }
       ]
     }
