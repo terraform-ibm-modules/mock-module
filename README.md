@@ -28,7 +28,7 @@
 Add an example of the use of the module in the following code block.
 
 Use real values instead of "var.<var_name>" or other placeholder values
-unless real values don't help users know what to change.
+unless real values don't help users know what to change. change..
 -->
 
 ```hcl
