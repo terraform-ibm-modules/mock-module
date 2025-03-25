@@ -221,6 +221,10 @@
           },
           "configuration": [
             {
+              "key": "ibmcloud_api_key",
+              "required": true
+            },
+            {
               "custom_config": {
                 "config_constraints": {
                   "generationType": "2"
