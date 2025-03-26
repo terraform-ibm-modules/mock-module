@@ -225,6 +225,10 @@
               "required": true
             },
             {
+              "key": "prefix",
+              "required": true
+            },
+            {
               "custom_config": {
                 "config_constraints": {
                   "generationType": "2"
