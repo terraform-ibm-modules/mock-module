@@ -1,0 +1,7 @@
+go 1.23
+
+use (
+	.
+)
+
+replace github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper => /Users/daniel/IdeaProjects/public/ibmcloud-terratest-wrapper

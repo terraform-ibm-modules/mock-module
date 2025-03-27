@@ -357,6 +357,80 @@
               }
             ]
           }
+        },
+        {
+          "label": "No Op with Dependencies",
+          "name": "no-op-dependencies",
+          "install_type": "fullstack",
+          "working_directory": "solutions/no-op",
+          "compliance": {
+            "authority": "scc-v3",
+            "profiles": [
+              {
+                "profile_name": "IBM Cloud Framework for Financial Services",
+                "profile_version": "1.7.0"
+              }
+            ]
+          },
+          "configuration": [
+            {
+              "key": "prefix",
+              "required": false
+            }
+          ],
+          "iam_permissions": [
+            {
+              "role_crns": [
+                "crn:v1:bluemix:public:iam::::role:Administrator"
+              ],
+              "service_name": "is.vpc"
+            }
+          ],
+          "architecture": {
+            "descriptions": "mock",
+            "features": [
+              {
+                "title": "Feature 1",
+                "description": "Feature 1 description"
+              },
+              {
+                "title": "Feature 2",
+                "description": "Feature 2 description"
+              }
+            ],
+            "diagrams": [
+              {
+                "diagram": {
+                  "caption": "Mock Module",
+                  "url": "https://www.svgrepo.com/show/532064/rainbow.svg",
+                  "type": "image/svg+xml"
+                },
+                "description": "This is a mock module diagram"
+              }
+            ]
+          },
+          "dependencies": [
+             {
+              "name": "deploy-arch-ibm-mock-module",
+              "label": "Mock DA Dependency",
+              "id": "50c034fb-a0ba-412f-acca-20fa1258b818",
+              "version": "^v14.2.0",
+              "flavors": [
+                "no-op"
+              ],
+              "catalog_id": "7df1e4ca-d54c-4fd0-82ce-3d13247308cd",
+              "optional": true,
+              "on_by_default": true,
+              "input_mapping": [
+                {
+                 "reference_version": true,
+                  "dependency_input": "prefix",
+                  "version_input": "prefix"
+                }
+              ]
+            }
+          ],
+          "dependency_version_2": true
         }
       ]
     }
