@@ -56,7 +56,7 @@ offerings:
     include_git_submodules: true
     kind: solution
     catalog_id: 7df1e4ca-d54c-4fd0-82ce-3d13247308cd
-    offering_id: 50c034fb-a0ba-412f-acca-20fa1258b818
+    offering_id: 0604a68a-ed1e-461e-be61-b899275aea60
     variations:
       - name: no-op-alt
         mark_ready: true
@@ -72,4 +72,17 @@ offerings:
         scc:
           instance_id: 1c7d5f78-9262-44c3-b779-b28fe4d88c37
           region: us-south
-      
+  - name: deploy-arch-ibm-mock-module-parent
+    ignore_code_freeze: true
+    include_git_submodules: true
+    kind: solution
+    catalog_id: 7df1e4ca-d54c-4fd0-82ce-3d13247308cd
+    offering_id: 3d2c00bc-ff7d-4c79-b2be-b05acee841c3
+    variations:
+      - name: no-op-dependencies-parent
+        mark_ready: true
+        install_type: fullstack
+        validation_type: projects
+        scc:
+          instance_id: 1c7d5f78-9262-44c3-b779-b28fe4d88c37
+          region: us-south
