@@ -292,16 +292,22 @@
           "dependencies": [
             {
               "name": "deploy-arch-ibm-mock-module",
-              "label": "Mock DA",
+              "label": "Mock DA Dependency",
               "id": "50c034fb-a0ba-412f-acca-20fa1258b818",
               "version": "^v14.2.0",
               "flavors": [
-                "no-op"
+                "no-op-dependencies"
               ],
               "catalog_id": "7df1e4ca-d54c-4fd0-82ce-3d13247308cd",
               "optional": true,
               "on_by_default": true,
-              "input_mapping": []
+              "input_mapping": [
+                {
+                  "reference_version": true,
+                  "dependency_input": "prefix",
+                  "version_input": "prefix"
+                }
+              ]
             }
           ],
           "dependency_version_2": true
@@ -410,7 +416,7 @@
             ]
           },
           "dependencies": [
-             {
+              {
               "name": "deploy-arch-ibm-mock-module",
               "label": "Mock DA Dependency",
               "id": "50c034fb-a0ba-412f-acca-20fa1258b818",
@@ -423,7 +429,7 @@
               "on_by_default": true,
               "input_mapping": [
                 {
-                 "reference_version": true,
+                  "reference_version": true,
                   "dependency_input": "prefix",
                   "version_input": "prefix"
                 }
