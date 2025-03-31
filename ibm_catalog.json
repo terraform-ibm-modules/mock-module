@@ -637,7 +637,7 @@
               "id": "0604a68a-ed1e-461e-be61-b899275aea60",
               "version": "^v14.2.0",
               "flavors": [
-                "no-op-with-dependencies-alt"
+                "no-op-dependencies-alt"
               ],
               "catalog_id": "7df1e4ca-d54c-4fd0-82ce-3d13247308cd",
               "optional": true,
