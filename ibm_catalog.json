@@ -281,7 +281,8 @@
               }
             ]
           }
-        }, {
+        },
+        {
           "label": "No Op",
           "name": "no-op",
           "install_type": "fullstack",
@@ -332,7 +333,8 @@
               }
             ]
           }
-        }, {
+        },
+        {
           "label": "No Op with Dependencies",
           "name": "no-op-dependencies",
           "install_type": "fullstack",
@@ -385,12 +387,12 @@
           },
           "dependencies": [
             {
-              "name": "deploy-arch-ibm-mock-module",
+              "name": "deploy-arch-ibm-mock-module-alt",
               "label": "Mock DA Dependency",
               "id": "50c034fb-a0ba-412f-acca-20fa1258b818",
               "version": "^v14.2.0",
               "flavors": [
-                "no-op"
+                "no-op-alt"
               ],
               "catalog_id": "7df1e4ca-d54c-4fd0-82ce-3d13247308cd",
               "optional": true,
@@ -442,7 +444,7 @@
         }
       ],
       "flavors": [
-    {
+        {
           "label": "No Op Alt",
           "name": "no-op-alt",
           "install_type": "fullstack",
@@ -484,7 +486,8 @@
               }
             ]
           }
-        }, {
+        },
+        {
           "label": "No Op with Dependencies Alternative",
           "name": "no-op-dependencies-alt",
           "install_type": "fullstack",
