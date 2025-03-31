@@ -281,7 +281,8 @@
               }
             ]
           }
-        }, {
+        },
+        {
           "label": "No Op",
           "name": "no-op",
           "install_type": "fullstack",
@@ -332,7 +333,8 @@
               }
             ]
           }
-        }, {
+        },
+        {
           "label": "No Op with Dependencies",
           "name": "no-op-dependencies",
           "install_type": "fullstack",
@@ -385,12 +387,12 @@
           },
           "dependencies": [
             {
-              "name": "deploy-arch-ibm-mock-module",
+              "name": "deploy-arch-ibm-mock-module-alt",
               "label": "Mock DA Dependency",
               "id": "50c034fb-a0ba-412f-acca-20fa1258b818",
               "version": "^v14.2.0",
               "flavors": [
-                "no-op"
+                "no-op-alt"
               ],
               "catalog_id": "7df1e4ca-d54c-4fd0-82ce-3d13247308cd",
               "optional": true,
@@ -442,7 +444,7 @@
         }
       ],
       "flavors": [
-    {
+        {
           "label": "No Op Alt",
           "name": "no-op-alt",
           "install_type": "fullstack",
@@ -484,7 +486,8 @@
               }
             ]
           }
-        }, {
+        },
+        {
           "label": "No Op with Dependencies Alternative",
           "name": "no-op-dependencies-alt",
           "install_type": "fullstack",
@@ -570,7 +573,7 @@
         "solution"
       ],
       "short_description": "Mock DA Parent for testing chain of dependencies",
-      "long_description": "This is a Mock DA for testing a chain of dependencies",
+      "long_description": "This is a Mock DA for testing a chain of dependencies parent->no-op-alt->no-op",
       "offering_docs_url": "https://github.com/terraform-ibm-modules/mock-module",
       "offering_icon_url": "https://globalcatalog.cloud.ibm.com/api/v1/1082e7d2-5e2f-0a11-a3bc-f88a8e1931fc/artifacts/terraform.svg",
       "provider_name": "IBM",
@@ -630,11 +633,11 @@
           "dependencies": [
             {
               "name": "deploy-arch-ibm-mock-module-alt",
-              "label": "Mock DA Dependency level 1",
-              "id": "50c034fb-a0ba-412f-acca-20fa1258b818",
-              "version": "^v14.2.0",
+              "label": "No Op with Dependencies Alternative",
+              "id": "0604a68a-ed1e-461e-be61-b899275aea60",
+              "version": "^v14.6.3",
               "flavors": [
-                "no-op-with-dependencies-alt"
+                "no-op-dependencies-alt"
               ],
               "catalog_id": "7df1e4ca-d54c-4fd0-82ce-3d13247308cd",
               "optional": true,
