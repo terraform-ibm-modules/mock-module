@@ -596,7 +596,8 @@
           "configuration": [
             {
               "key": "prefix",
-              "required": false
+              "required": true,
+              "default": "__NOT_SET__"
             }
           ],
           "iam_permissions": [
