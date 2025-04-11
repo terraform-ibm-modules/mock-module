@@ -27,6 +27,7 @@ An basic example showing how to consume the module.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_audit_webhook_listener_image_version"></a> [audit\_webhook\_listener\_image\_version](#input\_audit\_webhook\_listener\_image\_version) | The tag or digest for the audit webhook listener image to deploy. If changing the value, ensure it is compatible with `audit_webhook_listener_image`. | `string` | `"122e7a6c887ef24fea3095518857a708bd84b1e4@sha256:04c08891cd0201e11ecc6fe4f7b016ed137989010ced987cab57be5c7af3915a"` | no |
 | <a name="input_ibmcloud_api_key"></a> [ibmcloud\_api\_key](#input\_ibmcloud\_api\_key) | The IBM Cloud API Key | `string` | n/a | yes |
 | <a name="input_prefix"></a> [prefix](#input\_prefix) | Prefix to append to all resources created by this example | `string` | `"mock"` | no |
 | <a name="input_provider_visibility"></a> [provider\_visibility](#input\_provider\_visibility) | Set the visibility value for the IBM terraform provider. Supported values are `public`, `private`, `public-and-private`. [Learn more](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/guides/custom-service-endpoints). | `string` | `"private"` | no |
@@ -39,6 +40,7 @@ An basic example showing how to consume the module.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_audit_webhook_listener_image_version"></a> [audit\_webhook\_listener\_image\_version](#output\_audit\_webhook\_listener\_image\_version) | audit\_webhook\_listener\_image\_version |
 | <a name="output_fingerprint"></a> [fingerprint](#output\_fingerprint) | SSH key Fingerprint info |
 | <a name="output_resource_group"></a> [resource\_group](#output\_resource\_group) | Resource Group Name |
 | <a name="output_resource_group_id"></a> [resource\_group\_id](#output\_resource\_group\_id) | Resource Group ID |
