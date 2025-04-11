@@ -69,7 +69,6 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_audit_webhook_listener_image_version"></a> [audit\_webhook\_listener\_image\_version](#input\_audit\_webhook\_listener\_image\_version) | The tag or digest for the audit webhook listener image to deploy. If changing the value, ensure it is compatible with `audit_webhook_listener_image`. | `string` | `"122e7a6c887ef24fea3095518857a708bd84b1e4@sha256:04c08891cd0201e11ecc6fe4f7b016ed137989010ced987cab57be5c7af3915a"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the SSH Key. | `string` | n/a | yes |
 | <a name="input_resource_group_id"></a> [resource\_group\_id](#input\_resource\_group\_id) | ID of resource group. If not specified, Default resource group used. | `string` | `null` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | List of Tags for the SSH Key. | `list(string)` | `[]` | no |
@@ -78,7 +77,6 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_audit_webhook_listener_image_version"></a> [audit\_webhook\_listener\_image\_version](#output\_audit\_webhook\_listener\_image\_version) | audit\_webhook\_listener\_image\_version |
 | <a name="output_fingerprint"></a> [fingerprint](#output\_fingerprint) | SSH key Fingerprint info |
 | <a name="output_ssh_key_id"></a> [ssh\_key\_id](#output\_ssh\_key\_id) | The ID of the ssh key |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
