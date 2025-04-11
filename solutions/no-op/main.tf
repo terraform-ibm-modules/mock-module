@@ -4,7 +4,6 @@
 #############################################################################
 
 module "mock_module" {
-  source            = "../.."
-  name              = var.prefix
+  source = "../.."
+  name   = var.prefix
 }
-
