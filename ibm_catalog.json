@@ -597,7 +597,25 @@
             {
               "key": "prefix",
               "required": true,
-              "default": "__NOT_SET__"
+              "default": "__NOT_SET__",
+              "options": [
+                {
+                  "displayname": "eu-de",
+                  "value": "eu-de"
+                },
+                {
+                  "displayname": "us-south",
+                  "value": "us-south"
+                },
+                {
+                  "displayname": "eu-gb",
+                  "value": "eu-gb"
+                },
+                {
+                  "displayname": "jp-tok",
+                  "value": "jp-tok"
+                }
+              ]
             }
           ],
           "iam_permissions": [
