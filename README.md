@@ -9,7 +9,7 @@
 
 
 :warning: This is a mock module for testing purposes and not for general consumption..
-<!-- Below content is automatically populated via pre-commit hook -->
+<!-- Below content is automatically populated via   pre-commit hook -->
 <!-- BEGIN OVERVIEW HOOK -->
 ## Overview
 * [mock-module](#mock-module)
