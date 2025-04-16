@@ -479,16 +479,84 @@
       ],
       "flavors": [
         {
-          "label": "No Op Alt",
-          "name": "no-op-alt",
-          "install_type": "fullstack",
-          "working_directory": "solutions/no-op",
-          "configuration": [
-            {
-              "key": "prefix",
-              "required": false
-            }
-          ],
+"label": "No Op Alt",
+"name": "no-op-alt",
+"install_type": "fullstack",
+"working_directory": "solutions/no-op",
+"configuration": [
+  {
+    "key": "prefix",
+    "required": true
+  },
+  {
+    "key": "no-op-nul-number",
+    "required": false
+  },
+  {
+    "key": "notset-number",
+    "required": false
+  },
+  {
+    "key": "no-op-nul-bool",
+    "required": false
+  },
+  {
+    "key": "notset-bool",
+    "required": false
+  },
+  {
+    "key": "no-op-nul-list",
+    "required": false
+  },
+  {
+    "key": "notset-list",
+    "required": false
+  },
+  {
+    "key": "no-op-nul-map",
+    "required": false
+  },
+  {
+    "key": "notset-map",
+    "required": false
+  },
+  {
+    "key": "no-op-nul-set",
+    "required": false
+  },
+  {
+    "key": "notset-set",
+    "required": false
+  },
+  {
+    "key": "no-op-nul-object",
+    "required": false
+  },
+  {
+    "key": "notset-object",
+    "required": false
+  },
+  {
+    "key": "no-op-nul-tuple",
+    "required": false
+  },
+  {
+    "key": "notset-tuple",
+    "required": false
+  },
+  {
+    "key": "region",
+    "required": false
+  },
+  {
+    "key": "no-op-nul-string",
+    "required": false
+  },
+  {
+    "key": "notset-string",
+    "required": false
+  }
+],
           "iam_permissions": [
             {
               "role_crns": [
@@ -626,7 +694,7 @@
           "label": "No Op with Dependencies Parent",
           "name": "no-op-dependencies-parent",
           "install_type": "fullstack",
-          "working_directory": "solutions/no-op",
+          "working_directory": "",
           "configuration": [
             {
               "key": "prefix",
