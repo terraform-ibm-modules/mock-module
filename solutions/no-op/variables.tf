@@ -59,7 +59,7 @@ variable "notset-set" {
 }
 
 variable "no-op-nul-object" {
-  type        = object({
+  type = object({
     name = string
     age  = number
   })
@@ -68,7 +68,7 @@ variable "no-op-nul-object" {
 }
 
 variable "notset-object" {
-  type        = object({
+  type = object({
     name = string
     age  = number
   })
@@ -96,11 +96,11 @@ variable "no-op-nul-string" {
   type        = string
   description = "No-op variable to test setting a string to null"
   default     = null
-  
+
 }
 
 variable "notset-string" {
   type        = string
   description = "No-op variable to test not setting a string"
-  
+
 }
