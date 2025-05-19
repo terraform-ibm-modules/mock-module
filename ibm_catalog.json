@@ -30,9 +30,9 @@
         {
           "label": "Basic",
           "name": "basic",
+          "install_type": "fullstack",
           "working_directory": "examples/basic",
           "architecture": {
-            "descriptions": "Mock module",
             "features": [
               {
                 "title": "Mock feature 1",
@@ -66,9 +66,9 @@
         {
           "label": "Complete",
           "name": "complete",
+          "install_type": "fullstack",
           "working_directory": "examples/complete",
           "architecture": {
-            "descriptions": "Mock module",
             "features": [
               {
                 "title": "Mock feature 1",
@@ -196,7 +196,6 @@
             }
           ],
           "architecture": {
-            "descriptions": "",
             "features": [
               {
                 "title": "Feature 1",
@@ -293,7 +292,6 @@
             }
           ],
           "architecture": {
-            "descriptions": "mock",
             "features": [
               {
                 "title": "Feature 1",
@@ -345,7 +343,6 @@
             }
           ],
           "architecture": {
-            "descriptions": "mock",
             "features": [
               {
                 "title": "Feature 1",
@@ -397,7 +394,6 @@
             }
           ],
           "architecture": {
-            "descriptions": "mock",
             "features": [
               {
                 "title": "Feature 1",
@@ -479,84 +475,16 @@
       ],
       "flavors": [
         {
-"label": "No Op Alt",
-"name": "no-op-alt",
-"install_type": "fullstack",
-"working_directory": "solutions/no-op",
-"configuration": [
-  {
-    "key": "prefix",
-    "required": true
-  },
-  {
-    "key": "no-op-nul-number",
-    "required": false
-  },
-  {
-    "key": "notset-number",
-    "required": false
-  },
-  {
-    "key": "no-op-nul-bool",
-    "required": false
-  },
-  {
-    "key": "notset-bool",
-    "required": false
-  },
-  {
-    "key": "no-op-nul-list",
-    "required": false
-  },
-  {
-    "key": "notset-list",
-    "required": false
-  },
-  {
-    "key": "no-op-nul-map",
-    "required": false
-  },
-  {
-    "key": "notset-map",
-    "required": false
-  },
-  {
-    "key": "no-op-nul-set",
-    "required": false
-  },
-  {
-    "key": "notset-set",
-    "required": false
-  },
-  {
-    "key": "no-op-nul-object",
-    "required": false
-  },
-  {
-    "key": "notset-object",
-    "required": false
-  },
-  {
-    "key": "no-op-nul-tuple",
-    "required": false
-  },
-  {
-    "key": "notset-tuple",
-    "required": false
-  },
-  {
-    "key": "region",
-    "required": false
-  },
-  {
-    "key": "no-op-nul-string",
-    "required": false
-  },
-  {
-    "key": "notset-string",
-    "required": false
-  }
-],
+          "label": "No Op Alt",
+          "name": "no-op-alt",
+          "install_type": "fullstack",
+          "working_directory": "solutions/no-op",
+          "configuration": [
+            {
+              "key": "prefix",
+              "required": true
+            }
+          ],
           "iam_permissions": [
             {
               "role_crns": [
@@ -566,7 +494,6 @@
             }
           ],
           "architecture": {
-            "descriptions": "mock",
             "features": [
               {
                 "title": "Feature 1",
@@ -609,7 +536,6 @@
             }
           ],
           "architecture": {
-            "descriptions": "mock",
             "features": [
               {
                 "title": "Feature 1",
@@ -697,8 +623,14 @@
           "working_directory": "",
           "configuration": [
             {
-              "key": "prefix",
+              "key": "name",
               "required": false
+            },
+            {
+              "key": "resource_group_id"
+            },
+            {
+              "key": "tags"
             }
           ],
           "iam_permissions": [
@@ -710,7 +642,6 @@
             }
           ],
           "architecture": {
-            "descriptions": "mock",
             "features": [
               {
                 "title": "Feature 1",
