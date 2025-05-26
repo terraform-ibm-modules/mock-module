@@ -224,7 +224,7 @@
           "install_type": "fullstack",
           "working_directory": "solutions/mock-da",
           "compliance": {
-            "authority": "scc-wp-v1",
+            "authority": "scc-v3",
             "profiles": [
               {
                 "profile_name": "IBM Cloud Framework for Financial Services",
