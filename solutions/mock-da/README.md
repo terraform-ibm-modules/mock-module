@@ -7,27 +7,25 @@ An basic example showing how to consume the module.
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.0 |
 | <a name="requirement_ibm"></a> [ibm](#requirement\_ibm) | 1.78.3 |
 
 ### Modules
 
 | Name | Source | Version |
 |------|--------|---------|
+| <a name="module_cos"></a> [cos](#module\_cos) | terraform-ibm-modules/cos/ibm | 9.0.4 |
 | <a name="module_mock_module"></a> [mock\_module](#module\_mock\_module) | ../.. | n/a |
+| <a name="module_resource_group"></a> [resource\_group](#module\_resource\_group) | terraform-ibm-modules/resource-group/ibm | 1.2.0 |
 
 ### Resources
 
-| Name | Type |
-|------|------|
-| [ibm_resource_group.resource_group](https://registry.terraform.io/providers/IBM-Cloud/ibm/1.78.3/docs/resources/resource_group) | resource |
-| [ibm_resource_group.existing_resource_group](https://registry.terraform.io/providers/IBM-Cloud/ibm/1.78.3/docs/data-sources/resource_group) | data source |
+No resources.
 
 ### Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_audit_webhook_listener_image_version"></a> [audit\_webhook\_listener\_image\_version](#input\_audit\_webhook\_listener\_image\_version) | The tag or digest for the audit webhook listener image to deploy. If changing the value, ensure it is compatible with `audit_webhook_listener_image`. | `string` | `"9e767ffcc9285bd4734faf7f1b00591cdc01660b@sha256:053fa23ddc39557639398b12ddb5a27600b34c60bbc458127b80da2be29b00bc"` | no |
 | <a name="input_ibmcloud_api_key"></a> [ibmcloud\_api\_key](#input\_ibmcloud\_api\_key) | The IBM Cloud API Key | `string` | n/a | yes |
 | <a name="input_prefix"></a> [prefix](#input\_prefix) | Prefix to append to all resources created by this example | `string` | `"mock"` | no |
 | <a name="input_provider_visibility"></a> [provider\_visibility](#input\_provider\_visibility) | Set the visibility value for the IBM terraform provider. Supported values are `public`, `private`, `public-and-private`. [Learn more](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/guides/custom-service-endpoints). | `string` | `"private"` | no |
@@ -40,7 +38,6 @@ An basic example showing how to consume the module.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_audit_webhook_listener_image_version"></a> [audit\_webhook\_listener\_image\_version](#output\_audit\_webhook\_listener\_image\_version) | audit\_webhook\_listener\_image\_version |
 | <a name="output_fingerprint"></a> [fingerprint](#output\_fingerprint) | SSH key Fingerprint info |
 | <a name="output_resource_group"></a> [resource\_group](#output\_resource\_group) | Resource Group Name |
 | <a name="output_resource_group_id"></a> [resource\_group\_id](#output\_resource\_group\_id) | Resource Group ID |

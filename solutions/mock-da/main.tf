@@ -1,21 +1,29 @@
 ##############################################################################
 # Resource Group
-# (if var.resource_group is null, create a new RG using var.prefix)
 ##############################################################################
 
-resource "ibm_resource_group" "resource_group" {
-  count    = var.resource_group != null ? 0 : 1
-  name     = "${var.prefix}-rg"
-  quota_id = null
+module "resource_group" {
+  source  = "terraform-ibm-modules/resource-group/ibm"
+  version = "1.2.0"
+  # if an existing resource group is not set (null) create a new one using prefix
+  resource_group_name          = var.resource_group == null ? "${var.prefix}-resource-group" : null
+  existing_resource_group_name = var.resource_group
 }
 
-data "ibm_resource_group" "existing_resource_group" {
-  count = var.resource_group != null ? 1 : 0
-  name  = var.resource_group
-}
+##############################################################################
+# Create Cloud Object Storage instance and a bucket
+##############################################################################
 
-locals {
-  resource_group_id = var.resource_group != null ? data.ibm_resource_group.existing_resource_group[0].id : ibm_resource_group.resource_group[0].id
+module "cos" {
+  source                 = "terraform-ibm-modules/cos/ibm"
+  version                = "9.0.4"
+  resource_group_id      = module.resource_group.resource_group_id
+  region                 = var.region
+  cos_instance_name      = "${var.prefix}-cos"
+  cos_tags               = var.resource_tags
+  bucket_name            = "${var.prefix}-bucket"
+  retention_enabled      = false
+  kms_encryption_enabled = false
 }
 
 #############################################################################
@@ -25,6 +33,6 @@ locals {
 module "mock_module" {
   source            = "../.."
   name              = var.prefix
-  resource_group_id = local.resource_group_id
+  resource_group_id = module.resource_group.resource_group_id
   tags              = var.resource_tags
 }
