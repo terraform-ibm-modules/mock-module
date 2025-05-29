@@ -11,19 +11,19 @@ module "resource_group" {
 }
 
 ##############################################################################
-# Create Cloud Object Storage instance and a bucket
+# SM
 ##############################################################################
 
-module "cos" {
-  source                 = "terraform-ibm-modules/cos/ibm"
-  version                = "9.0.4"
-  resource_group_id      = module.resource_group.resource_group_id
-  region                 = var.region
-  cos_instance_name      = "${var.prefix}-cos"
-  cos_tags               = var.resource_tags
-  bucket_name            = "${var.prefix}-bucket"
-  retention_enabled      = false
-  kms_encryption_enabled = false
+resource "ibm_resource_instance" "secrets_manager_instance" {
+  name              = "${var.prefix}-sm"
+  service           = "secrets-manager"
+  plan              = "trial"
+  location          = "us-south"
+  resource_group_id = module.resource_group.resource_group_id
+  tags              = var.resource_tags
+  timeouts {
+    create = "30m"
+  }
 }
 
 #############################################################################
