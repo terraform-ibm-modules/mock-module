@@ -219,7 +219,7 @@
           }
         },
         {
-          "label": "security-enforced",
+          "label": "Security-enforced",
           "name": "standard",
           "install_type": "fullstack",
           "working_directory": "solutions/mock-da",
