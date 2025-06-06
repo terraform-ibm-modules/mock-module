@@ -136,7 +136,7 @@
       ],
       "flavors": [
         {
-          "label": "QuickStart Mock",
+          "label": "Fully configurable",
           "name": "quickstart",
           "install_type": "fullstack",
           "working_directory": "solutions/mock-da-quickstart",
@@ -219,7 +219,7 @@
           }
         },
         {
-          "label": "Standard",
+          "label": "security-enforced",
           "name": "standard",
           "install_type": "fullstack",
           "working_directory": "solutions/mock-da",
