@@ -8,15 +8,15 @@ An basic example showing how to consume the module.
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.0 |
-| <a name="requirement_ibm"></a> [ibm](#requirement\_ibm) | 1.78.3 |
+| <a name="requirement_ibm"></a> [ibm](#requirement\_ibm) | 1.79.2 |
 
 ### Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_cos"></a> [cos](#module\_cos) | terraform-ibm-modules/cos/ibm | 9.0.4 |
+| <a name="module_cos"></a> [cos](#module\_cos) | terraform-ibm-modules/cos/ibm | 9.0.7 |
 | <a name="module_mock_module"></a> [mock\_module](#module\_mock\_module) | ../.. | n/a |
-| <a name="module_resource_group"></a> [resource\_group](#module\_resource\_group) | terraform-ibm-modules/resource-group/ibm | 1.2.0 |
+| <a name="module_resource_group"></a> [resource\_group](#module\_resource\_group) | terraform-ibm-modules/resource-group/ibm | 1.2.1 |
 
 ### Resources
 
