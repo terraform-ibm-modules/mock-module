@@ -33,11 +33,11 @@ output "next_steps_text" {
 }
 
 output "next_step_primary_label" {
-  value       = "View Secrets Manager [public-cert-engine](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-secrets-manager-public-cert-engine-79d8474b-7105-4c36-81d7-989f042bce0e-global) "
+  value       = "View Secrets Manager [public-cert-engine](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-secrets-manager-public-cert-engine-79d8474b-7105-4c36-81d7-989f042bce0e-global)"
   description = "Primary label"
 }
 
 output "next_step_primary_url" {
-  value       = "https://cloud.ibm.com/services/secrets-manager/${local.secrets_manager_crn}"
+  value       = "[public-cert-engine](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-secrets-manager-public-cert-engine-79d8474b-7105-4c36-81d7-989f042bce0e-global), [public-cert-engine2](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-secrets-manager-public-cert-engine-79d8474b-7105-4c36-81d7-989f042bce0e-global)"
   description = "primary url"
 }
