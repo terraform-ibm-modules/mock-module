@@ -61,7 +61,8 @@
               ],
               "service_name": "is.vpc"
             }
-          ]
+          ],
+          "terraform_version": "1.10.5"
         },
         {
           "label": "Complete",
@@ -97,7 +98,8 @@
               ],
               "service_name": "is.vpc"
             }
-          ]
+          ],
+          "terraform_version": "1.10.5"
         }
       ]
     },
@@ -216,7 +218,8 @@
                 "description": "This is a mock module diagram"
               }
             ]
-          }
+          },
+          "terraform_version": "1.10.5"
         },
         {
           "label": "Standard",
@@ -309,7 +312,8 @@
                 "description": "This is a mock module diagram"
               }
             ]
-          }
+          },
+          "terraform_version": "1.10.5"
         }
       ]
     }
