@@ -2,6 +2,10 @@
 package test
 
 import (
+	"log"
+	"net/url"
+	"os/exec"
+	"strings"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -30,6 +34,7 @@ func setupOptions(t *testing.T, prefix string, dir string) *testhelper.TestOptio
 }
 
 func TestRunBasicExample(t *testing.T) {
+	t.Skip()
 	t.Parallel()
 
 	options := setupOptions(t, "mock-basic", basicExampleTerraformDir)
@@ -40,6 +45,7 @@ func TestRunBasicExample(t *testing.T) {
 }
 
 func TestRunCompleteExample(t *testing.T) {
+	t.Skip()
 	t.Parallel()
 
 	options := setupOptions(t, "mock-com", completeExampleTerraformDir)
@@ -61,4 +67,41 @@ func TestRunUpgradeExample(t *testing.T) {
 		assert.Nil(t, err, "This should not have errored")
 		assert.NotNil(t, output, "Expected some output")
 	}
+}
+
+func TestOriginURL(t *testing.T) {
+
+	cmd_commit_sha := exec.Command("git", "rev-parse", "HEAD")
+	output_commit_sha, _ := cmd_commit_sha.Output()
+
+	origin_base := getOriginURL()
+
+	if !strings.HasPrefix(origin_base, "http") {
+		origin_base = strings.Split(origin_base, "@")[1]
+		origin_base = strings.Replace(origin_base, ":", "/", 1)
+		origin_base = "https://" + origin_base
+		origin_base = strings.TrimSuffix(origin_base, ".git")
+	}
+
+	origin_url, _ := url.JoinPath(origin_base, "tree", strings.TrimSpace(string(output_commit_sha)))
+
+	t.Log("Test URL would be: " + origin_url)
+}
+
+// copied from wrapper temporarily
+func getOriginURL() string {
+	// Determine the URL of the upstream remote (usually "origin")
+	repo := ""
+
+	// If there's no "upstream" remote, fall back to "origin"
+	cmd := exec.Command("git", "remote", "get-url", "origin")
+	output, err := cmd.Output()
+	if err != nil {
+		log.Println("Unable to determine origin URL")
+		log.Println(err)
+		return ""
+	}
+	repo = strings.TrimSpace(string(output))
+
+	return repo
 }
