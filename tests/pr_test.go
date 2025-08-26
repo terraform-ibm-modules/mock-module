@@ -2,6 +2,7 @@
 package test
 
 import (
+	"fmt"
 	"log"
 	"net/url"
 	"os/exec"
@@ -9,6 +10,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 	"github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper/testhelper"
 )
 
@@ -104,4 +106,46 @@ func getOriginURL() string {
 	repo = strings.TrimSpace(string(output))
 
 	return repo
+}
+
+func TestBetterPullURL(t *testing.T) {
+
+	cmd_commit_sha := exec.Command("git", "rev-parse", "HEAD")
+	output_commit_sha, _ := cmd_commit_sha.Output()
+	t.Log("Commit SHA: " + strings.TrimSpace(string(output_commit_sha)))
+
+	// get a parsed url from origin
+	urlObj, originalUrl, parseErr := getParsedURL()
+	require.NoError(t, parseErr)
+
+	t.Log("The original Origin URL: " + originalUrl)
+	t.Log("Scheme: " + urlObj.Scheme)
+	t.Log("Opaque: " + urlObj.Opaque)
+	t.Log("User: " + urlObj.User.String())
+	t.Log("Host: " + urlObj.Host)
+	t.Log("Path: " + urlObj.Path)
+
+	// now build a new url based on original but with changes
+	newUrl := new(url.URL)
+	newUrl.Scheme = "https"
+	newUrl.Host = urlObj.Hostname()
+	newPath, pathErr := url.JoinPath(strings.TrimSuffix(urlObj.Path, ".git"), "tree", strings.TrimSpace(string(output_commit_sha)))
+	require.NoError(t, pathErr)
+	newUrl.Path = newPath
+
+	t.Log("Final URL to PR: " + newUrl.String())
+}
+
+func getParsedURL() (*url.URL, string, error) {
+	originalUrl := getOriginURL()
+	if len(originalUrl) == 0 {
+		return nil, originalUrl, fmt.Errorf("Empty Origin URL")
+	}
+
+	parsedUrl, parseErr := url.Parse(originalUrl)
+	if parseErr != nil {
+		return nil, originalUrl, fmt.Errorf("Could not parse url '%s': %w", originalUrl, parseErr)
+	}
+
+	return parsedUrl, originalUrl, nil
 }
