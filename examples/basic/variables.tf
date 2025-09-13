@@ -27,3 +27,9 @@ variable "resource_tags" {
   description = "Optional list of tags to be added to created resources"
   default     = []
 }
+
+variable "new_for_test" {
+  type        = string
+  description = "for test"
+  default     = "hello"
+}
