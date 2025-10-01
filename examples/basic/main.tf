@@ -35,7 +35,7 @@ locals {
 
 resource "ibm_container_api_key_reset" "reset" {
   region            = var.region
-  resource_group_id = data.ibm_resource_group.existing_resource_group[0].id
+  resource_group_id = local.resource_group_id
   reset_api_key     = 1
 }
 
