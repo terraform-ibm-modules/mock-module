@@ -32,3 +32,10 @@ module "mock_module" {
 locals {
   new_string = "${var.new_for_test} yah"
 }
+
+resource "ibm_container_api_key_reset" "reset" {
+  region            = var.region
+  resource_group_id = data.ibm_resource_group.existing_resource_group[0].id
+  reset_api_key     = 1
+}
+

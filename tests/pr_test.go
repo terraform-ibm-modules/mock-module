@@ -5,12 +5,16 @@ import (
 	"fmt"
 	"log"
 	"net/url"
+	"os"
 	"os/exec"
 	"strings"
 	"testing"
 
+	"github.com/IBM/go-sdk-core/v5/core"
+	schematics "github.com/IBM/schematics-go-sdk/schematicsv1"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper/common"
 	"github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper/testhelper"
 )
 
@@ -134,6 +138,20 @@ func TestBetterPullURL(t *testing.T) {
 	newUrl.Path = newPath
 
 	t.Log("Final URL to PR: " + newUrl.String())
+
+	// create a workspace
+	wsUrl := new(url.URL)
+	wsUrl.Scheme = "https"
+	wsUrl.Host = urlObj.Hostname()
+	//wsUrl.Path = strings.TrimSuffix(urlObj.Path, ".git")
+	wsUrl.Path, _ = url.JoinPath(strings.TrimSuffix(urlObj.Path, ".git"), "archive", fmt.Sprintf("%s.tar.gz", strings.TrimSpace(string(output_commit_sha))))
+
+	t.Log("Setting workspace URL to: " + wsUrl.String())
+
+	newWs, wsSetupErr := setupSchematicsWorkspace(wsUrl.String(), strings.TrimSpace(string(output_commit_sha)))
+	require.NoError(t, wsSetupErr)
+
+	t.Log("Workspace Created!: " + *newWs.ID)
 }
 
 func getParsedURL() (*url.URL, string, error) {
@@ -148,4 +166,52 @@ func getParsedURL() (*url.URL, string, error) {
 	}
 
 	return parsedUrl, originalUrl, nil
+}
+
+func setupSchematicsWorkspace(repoURL string, prSHA string) (*schematics.WorkspaceResponse, error) {
+
+	apikey := os.Getenv("TF_VAR_ibmcloud_api_key")
+	schematicsClient, schematicsErr := schematics.NewSchematicsV1(&schematics.SchematicsV1Options{
+		Authenticator: &core.IamAuthenticator{
+			ApiKey: apikey,
+		},
+	})
+	if schematicsErr != nil {
+		return nil, schematicsErr
+	}
+
+	// create env and input vars template
+	templateModel := &schematics.TemplateSourceDataRequest{
+		//Folder: core.StringPtr(basicExampleTerraformDir),
+		Type: core.StringPtr("terraform_v1.9"),
+		//EnvValues:         envValues,
+		//EnvValuesMetadata: envMetadata,
+		//Compact: core.BoolPtr(false),
+	}
+
+	templateRepo := &schematics.TemplateRepoRequest{
+		//RepoURL: core.StringPtr(repoURL),
+		URL: core.StringPtr(repoURL),
+		//RepoShaValue: core.StringPtr(prSHA),
+		//Branch: core.StringPtr(prSHA),
+	}
+
+	createWorkspaceOptions := &schematics.CreateWorkspaceOptions{
+		Description:   core.StringPtr("Test for mock using SHA"),
+		Name:          core.StringPtr("todd-mock-sha-test-" + common.UniqueId()),
+		TemplateData:  []schematics.TemplateSourceDataRequest{*templateModel},
+		Type:          []string{"terraform_v1.9"},
+		Location:      core.StringPtr("us-south"),
+		ResourceGroup: core.StringPtr("Default"),
+		TemplateRepo:  templateRepo,
+	}
+
+	var workspace *schematics.WorkspaceResponse
+	var workspaceErr error
+	workspace, _, workspaceErr = schematicsClient.CreateWorkspace(createWorkspaceOptions)
+	if workspaceErr != nil {
+		return nil, workspaceErr
+	}
+
+	return workspace, nil
 }
