@@ -28,3 +28,7 @@ module "mock_module" {
   resource_group_id = local.resource_group_id
   tags              = var.resource_tags
 }
+
+locals {
+  new_test_value = var.new_for_test
+}
