@@ -28,14 +28,3 @@ module "mock_module" {
   resource_group_id = local.resource_group_id
   tags              = var.resource_tags
 }
-
-locals {
-  new_string = "${var.new_for_test} yah"
-}
-
-resource "ibm_container_api_key_reset" "reset" {
-  region            = var.region
-  resource_group_id = local.resource_group_id
-  reset_api_key     = 1
-}
-

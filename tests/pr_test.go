@@ -9,6 +9,7 @@ import (
 	"os/exec"
 	"strings"
 	"testing"
+	"time"
 
 	"github.com/IBM/go-sdk-core/v5/core"
 	schematics "github.com/IBM/schematics-go-sdk/schematicsv1"
@@ -23,6 +24,72 @@ const resourceGroup = "geretain-test-resources"
 const basicExampleTerraformDir = "examples/basic"
 const completeExampleTerraformDir = "examples/complete"
 const daTerraformDir = "solutions/mock-da"
+
+var testBranchName string
+
+func TestMain(m *testing.M) {
+
+	setupErr := globalTestSetup()
+	if setupErr != nil {
+		log.Fatal(setupErr)
+	}
+
+	defer func() {
+		if setupErr == nil {
+			log.Println("about to teardown")
+			teardownErr := globalTestTeardown()
+			if teardownErr != nil {
+				log.Println(teardownErr)
+			}
+		}
+	}()
+
+	m.Run()
+}
+
+func globalTestSetup() error {
+	log.Println("+++++++++++++ IN GLOBAL SETUP +++++++++++++++++")
+	log.Println("   this is where we would remove branch ", testBranchName)
+	return nil
+}
+
+func createTestBranch() error {
+	branch_name := fmt.Sprintf("mock-module-test-%s", time.Now().Unix())
+	cmd_branch_switch := exec.Command("git", "switch", "-c", branch_name)
+	output_branch_switch, branch_switch_err := cmd_branch_switch.Output()
+	log.Println("Switching Branch: " + string(output_branch_switch))
+	if branch_switch_err != nil {
+		return branch_switch_err
+	}
+
+	// push the branch up
+	cmd_push_branch := exec.Command("git", "push", "-u", "origin", branch_name)
+	output_push_branch, push_branch_err := cmd_push_branch.Output()
+	log.Println("Pushing Test Branch: " + string(output_push_branch))
+	if push_branch_err != nil {
+		return push_branch_err
+	}
+
+	// If push was success, set the name for later
+	testBranchName = branch_name
+
+	return nil
+}
+
+func globalTestTeardown() error {
+	log.Println("+++++++++++++ IN GLOBAL TEARDOWN +++++++++++++++++")
+	return nil
+}
+
+func TestSimpleMsgPass(t *testing.T) {
+	t.Log(" IN SIMPLE TEST PASS")
+	//t.Fail()
+}
+
+func TestSimpleFail(t *testing.T) {
+	t.Log(" IN SIMPLE TEST FAILED")
+	t.Fail()
+}
 
 func setupOptions(t *testing.T, prefix string, dir string) *testhelper.TestOptions {
 	options := testhelper.TestOptionsDefaultWithVars(&testhelper.TestOptions{
