@@ -62,7 +62,7 @@
               "service_name": "is.vpc"
             }
           ],
-          "terraform_version": "1.10.5"
+          "terraform_version": "1.12.2"
         },
         {
           "label": "Complete",
@@ -99,7 +99,7 @@
               "service_name": "is.vpc"
             }
           ],
-          "terraform_version": "1.10.5"
+          "terraform_version": "1.12.2"
         }
       ]
     },
@@ -219,7 +219,7 @@
               }
             ]
           },
-          "terraform_version": "1.10.5"
+          "terraform_version": "1.12.2"
         },
         {
           "label": "Standard",
@@ -313,7 +313,7 @@
               }
             ]
           },
-          "terraform_version": "1.10.5"
+          "terraform_version": "1.12.2"
         }
       ]
     }
