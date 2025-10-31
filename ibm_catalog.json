@@ -62,7 +62,8 @@
               "service_name": "is.vpc"
             }
           ],
-          "terraform_version": "1.12.2"
+          "terraform_version": "1.12.2",
+          "ignore_readme": true
         },
         {
           "label": "Complete",
@@ -99,7 +100,8 @@
               "service_name": "is.vpc"
             }
           ],
-          "terraform_version": "1.12.2"
+          "terraform_version": "1.12.2",
+          "ignore_readme": true
         }
       ]
     },
@@ -219,7 +221,8 @@
               }
             ]
           },
-          "terraform_version": "1.12.2"
+          "terraform_version": "1.12.2",
+          "ignore_readme": true
         },
         {
           "label": "Standard",
@@ -313,7 +316,8 @@
               }
             ]
           },
-          "terraform_version": "1.12.2"
+          "terraform_version": "1.12.2",
+          "ignore_readme": true
         }
       ]
     }
