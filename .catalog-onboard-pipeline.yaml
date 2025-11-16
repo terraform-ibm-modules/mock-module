@@ -1,18 +1,18 @@
 ---
 apiVersion: v1
 offerings:
-  - name: terraform-ibm-mock-module
-    ignore_code_freeze: true
-    kind: module
-    catalog_id: 7df1e4ca-d54c-4fd0-82ce-3d13247308cd
-    offering_id: 3fa729e0-4b4b-4210-85e7-8bb8fa98c3b9
-    examples:
-      - name: basic
-        mark_ready: true
-        validation_type: schematics
-      - name: complete
-        mark_ready: true
-        validation_type: projects
+  # - name: terraform-ibm-mock-module
+  #   ignore_code_freeze: true
+  #   kind: module
+  #   catalog_id: 7df1e4ca-d54c-4fd0-82ce-3d13247308cd
+  #   offering_id: 3fa729e0-4b4b-4210-85e7-8bb8fa98c3b9
+  #   examples:
+  #     - name: basic
+  #       mark_ready: true
+  #       validation_type: schematics
+  #     - name: complete
+  #       mark_ready: true
+  #       validation_type: projects
   - name: deploy-arch-ibm-mock-module
     ignore_code_freeze: true
     include_git_submodules: true
@@ -24,16 +24,18 @@ offerings:
         mark_ready: true
         install_type: fullstack
         validation_type: projects
-        scc:
-          instance_id: 1c7d5f78-9262-44c3-b779-b28fe4d88c37
-          region: us-south
-      - name: quickstart
-        mark_ready: true
-        install_type: fullstack
-        validation_type: schematics
-        validation_rg: temp
-        pre_validation: tests/scripts/pre-validation.sh
-        post_validation: tests/scripts/post-validation.sh
-        scc:
-          instance_id: 1c7d5f78-9262-44c3-b779-b28fe4d88c37
-          region: us-south
+        scc_wp:
+          scc_wp_guid: 3f0378fe-2582-49d6-84a5-3962228328a5
+          scc_wp_region: us-south
+          app_config_guid: 9fc73a77-f319-4086-a08d-43e00672f981
+          app_config_region: us-south
+      # - name: quickstart
+      #   mark_ready: true
+      #   install_type: fullstack
+      #   validation_type: schematics
+      #   validation_rg: temp
+      #   pre_validation: tests/scripts/pre-validation.sh
+      #   post_validation: tests/scripts/post-validation.sh
+      #   scc:
+      #     instance_id: 1c7d5f78-9262-44c3-b779-b28fe4d88c37
+      #     region: us-south

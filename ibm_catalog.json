@@ -61,7 +61,9 @@
               ],
               "service_name": "is.vpc"
             }
-          ]
+          ],
+          "terraform_version": "1.12.2",
+          "ignore_readme": true
         },
         {
           "label": "Complete",
@@ -97,7 +99,9 @@
               ],
               "service_name": "is.vpc"
             }
-          ]
+          ],
+          "terraform_version": "1.12.2",
+          "ignore_readme": true
         }
       ]
     },
@@ -109,7 +113,7 @@
         "ibm_created",
         "target_terraform",
         "terraform",
-        "converged_infra",
+        "platform_engineering",
         "solution"
       ],
       "keywords": [
@@ -216,7 +220,9 @@
                 "description": "This is a mock module diagram"
               }
             ]
-          }
+          },
+          "terraform_version": "1.12.2",
+          "ignore_readme": true
         },
         {
           "label": "Standard",
@@ -309,7 +315,9 @@
                 "description": "This is a mock module diagram"
               }
             ]
-          }
+          },
+          "terraform_version": "1.12.2",
+          "ignore_readme": true
         }
       ]
     }
