@@ -24,7 +24,7 @@ offerings:
         mark_ready: true
         install_type: fullstack
         validation_type: projects
-        scc_wp:
+        compliance:
           scc_wp_guid: 3f0378fe-2582-49d6-84a5-3962228328a5
           scc_wp_region: us-south
           app_config_guid: 9fc73a77-f319-4086-a08d-43e00672f981
