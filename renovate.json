@@ -1,13 +1,3 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>terraform-ibm-modules/common-dev-assets:commonRenovateConfig"],
-  "regexManagers": [
-    {
-      "fileMatch": ["scripts/install-binaries.sh$"],
-      "matchStrings": [
-        "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?TAG=(?<currentValue>.*)\\s"
-      ],
-      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
-    }
-  ]
-}
+  "extends": ["github>terraform-ibm-modules/common-dev-assets:commonRenovateConfig"]
