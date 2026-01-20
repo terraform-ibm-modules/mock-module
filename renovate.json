@@ -1,16 +1,15 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>terraform-ibm-modules/common-dev-assets:commonRenovateConfig"],
-  "regexManagers": [
+  "customManagers": [
     {
       "description": "Manage bumping the version of the common bash library",
-      "fileMatch": ["**/scripts/install-binaries.sh"],
+      "customType": "regex",
+      "managerFilePatterns": ["**/scripts/install-binaries.sh"],
       "matchStrings": [
         "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s^TAG=(?<currentValue>.*)\\s"
       ],
-      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
-      "rangeStrategy": "bump",
-      "semanticCommitType": "fix"
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     }
   ]
 }
