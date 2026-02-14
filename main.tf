@@ -14,6 +14,6 @@ resource "terraform_data" "hello_world" {
   }
 
   provisioner "local-exec" {
-    command = "echo 'Hello, World! from ${var.name} in RG_id ${local.resource_group_id} with tags ${local.tags}.'"
+    command = "echo 'Hello, World! This is a test from ${var.name} in RG_id ${local.resource_group_id} with tags ${local.tags}.'"
   }
 }
