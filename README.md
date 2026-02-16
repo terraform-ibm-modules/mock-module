@@ -1,5 +1,5 @@
 <!-- Update the title to match the module name and add a description -->
-# Mock Module (NOT FOR GENERAL CONSUMPTION)
+# Mock Module (NOT FOR GENERAL CONSUMPTION2)
 
 [![Incubating (Not yet consumable)](https://img.shields.io/badge/status-Incubating%20(Not%20yet%20consumable)-red)](https://terraform-ibm-modules.github.io/documentation/#/badge-status)
 [![latest release](https://img.shields.io/github/v/release/terraform-ibm-modules/mock-module?logo=GitHub&sort=semver)](https://github.com/terraform-ibm-modules/mock-module/releases/latest)
