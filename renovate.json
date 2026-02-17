@@ -1,17 +1,27 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>terraform-ibm-modules/common-dev-assets:commonRenovateConfig"],
+  "extends": ["local>terraform-ibm-modules/common-dev-assets:commonRenovateConfig"],
+  "regexManagers": [
+    {
+      "fileMatch": ["^module-assets/ci/install-deps.sh$"],
+      "matchStrings": [
+        "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?_VERSION=(?<currentValue>.*)\\s"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    }
+  ],
   "customManagers": [
     {
       "customType": "regex",
-      "description": "Update Golang base image in private Artifactory Dockerfile",
-      "fileMatch": ["(^|/)Dockerfile$"],
+      "description": "Update JQ_VERSION from jqlang/jq GitHub tags (jq- prefix)",
+      "fileMatch": [".*"],
       "matchStrings": [
-        "FROM docker-na-private\\.artifactory\\.swg-devops\\.com/wcp-goldeneye-team-docker-virtual/library/golang:(?<currentValue>\\d+\\.\\d+)"
+        "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?JQ_VERSION=(?<currentValue>.*)\\s"
       ],
-      "depNameTemplate": "golang",
-      "datasourceTemplate": "docker",
-      "versioningTemplate": "docker"
+      "depNameTemplate": "jqlang/jq",
+      "datasourceTemplate": "github-tags",
+      "versioningTemplate": "semver",
+      "extractVersionTemplate": "^jq-(?<version>\\d+\\.\\d+\\.\\d+)$"
     }
   ]
 }
