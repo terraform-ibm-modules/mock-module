@@ -12,15 +12,29 @@
 <!-- Below content is automatically populated via   pre-commit hook -->
 <!-- BEGIN OVERVIEW HOOK -->
 ## Overview
-* [mock-module](#mock-module)
-* [Examples](./examples)
-:information_source: Ctrl/Cmd+Click or right-click on the Schematics deploy button to open in a new tab
-    * <a href="./examples/basic">Basic example</a> <a href="https://cloud.ibm.com/schematics/workspaces/create?workspace_name=mock-module-basic-example&repository=https://github.com/terraform-ibm-modules/mock-module/tree/main/examples/basic"><img src="https://img.shields.io/badge/Deploy%20with IBM%20Cloud%20Schematics-0f62fe?logo=ibm&logoColor=white&labelColor=0f62fe" alt="Deploy with IBM Cloud Schematics" style="height: 16px; vertical-align: text-bottom; margin-left: 5px;"></a>
-    * <a href="./examples/complete">Complete example</a> <a href="https://cloud.ibm.com/schematics/workspaces/create?workspace_name=mock-module-complete-example&repository=https://github.com/terraform-ibm-modules/mock-module/tree/main/examples/complete"><img src="https://img.shields.io/badge/Deploy%20with IBM%20Cloud%20Schematics-0f62fe?logo=ibm&logoColor=white&labelColor=0f62fe" alt="Deploy with IBM Cloud Schematics" style="height: 16px; vertical-align: text-bottom; margin-left: 5px;"></a>
-* [Deployable Architectures](./solutions)
-    * <a href="./solutions/mock-da">Complete example</a>
-    * <a href="./solutions/mock-da-quickstart">Complete example</a>
-* [Contributing](#contributing)
+<ul>
+  <li><a href="#mock-module">mock-module</a></li>
+  <li><a href="./examples">Examples</a>
+    <ul>
+      <li>
+        <a href="./examples/basic">Basic example</a>
+        <a href="https://cloud.ibm.com/schematics/workspaces/create?workspace_name=mock-module-basic-example&repository=https://github.com/terraform-ibm-modules/mock-module/tree/main/examples/basic"><img src="https://img.shields.io/badge/Deploy%20with%20IBM%20Cloud%20Schematics-0f62fe?style=flat&logo=ibm&logoColor=white&labelColor=0f62fe" alt="Deploy with IBM Cloud Schematics" style="height: 16px; vertical-align: text-bottom; margin-left: 5px;"></a>
+      </li>
+      <li>
+        <a href="./examples/complete">Complete example</a>
+        <a href="https://cloud.ibm.com/schematics/workspaces/create?workspace_name=mock-module-complete-example&repository=https://github.com/terraform-ibm-modules/mock-module/tree/main/examples/complete"><img src="https://img.shields.io/badge/Deploy%20with%20IBM%20Cloud%20Schematics-0f62fe?style=flat&logo=ibm&logoColor=white&labelColor=0f62fe" alt="Deploy with IBM Cloud Schematics" style="height: 16px; vertical-align: text-bottom; margin-left: 5px;"></a>
+      </li>
+    </ul>
+    ℹ️ Ctrl/Cmd+Click or right-click on the Schematics deploy button to open in a new tab.
+  </li>
+  <li><a href="./solutions">Deployable Architectures</a>
+    <ul>
+      <li><a href="./solutions/mock-da">Complete example</a></li>
+      <li><a href="./solutions/mock-da-quickstart">Complete example</a></li>
+    </ul>
+  </li>
+  <li><a href="#contributing">Contributing</a></li>
+</ul>
 <!-- END OVERVIEW HOOK -->
 
 <!-- This heading should always match the name of the root level module (aka the repo name) -->
