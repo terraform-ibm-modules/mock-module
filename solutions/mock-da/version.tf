@@ -5,5 +5,9 @@ terraform {
       source  = "IBM-Cloud/ibm"
       version = "1.89.0"
     }
+    restapi = {
+      source  = "Mastercard/restapi"
+      version = "2.0.1"
+    }
   }
 }
