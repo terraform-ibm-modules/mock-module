@@ -1,4 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["local>terraform-ibm-modules/common-dev-assets:commonRenovateConfig"]
+  "extends": ["local>terraform-ibm-modules/common-dev-assets:commonRenovateConfig"],
+  "packageRules": [
+    {
+      "matchDatasources": ["terraform-provider"],
+      "matchPackageNames": ["restapi"],
+      "enabled": false
+    }
+  ]
 }
