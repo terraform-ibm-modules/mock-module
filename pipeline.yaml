@@ -1,0 +1,3 @@
+services:
+  signing-service:
+    image: icr.io/continuous-delivery/toolchains/devsecops/csso-image-sign:01-01-2025-12-00@sha256:0000000000000000000000000000000000000000000000000000000000000000
