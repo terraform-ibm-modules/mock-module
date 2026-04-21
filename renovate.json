@@ -1,4 +1,26 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["local>terraform-ibm-modules/common-dev-assets:commonRenovateConfig"]
+  "extends": [
+    "local>terraform-ibm-modules/common-dev-assets:commonRenovateConfig"
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Dedicated manager for CSSO image in pipeline.yaml",
+      "fileMatch": ["^pipeline\\.yaml$"],
+      "matchStrings": [
+        "image: (?<depName>icr\\.io/continuous-delivery/toolchains/devsecops/csso-image-sign):(?<currentValue>.*?)@(?<currentDigest>sha256:[a-f0-9]+)"
+      ],
+      "datasourceTemplate": "docker"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": [
+        "icr.io/continuous-delivery/toolchains/devsecops/csso-image-sign"
+      ],
+      "versioning": "regex:^(?<day>\\d{2})-(?<month>\\d{2})-(?<year>\\d{4})-(?<hour>\\d{2})-(?<minute>\\d{2})$"
+    }
+  ]
 }
