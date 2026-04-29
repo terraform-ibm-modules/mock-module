@@ -1,57 +1,26 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "local>terraform-ibm-modules/common-dev-assets:commonRenovateConfig"
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Dedicated manager for CSSO image in pipeline.yaml",
+      "fileMatch": ["^pipeline\\.yaml$"],
+      "matchStrings": [
+        "image: (?<depName>icr\\.io/continuous-delivery/toolchains/devsecops/csso-image-sign):(?<currentValue>.*?)@(?<currentDigest>sha256:[a-f0-9]+)"
+      ],
+      "datasourceTemplate": "docker"
+    }
+  ],
   "packageRules": [
     {
-      "description": "Group all dependencies into a single PR",
-      "matchPackagePatterns": ["*"],
-      "groupName": "dependencies"
-    },
-    {
-      "description": "Use fix as Semantic Commit prefix for all dependency updates except ones specified in rules below",
-      "matchPackagePatterns": ["*"],
-      "semanticCommitType": "fix"
-    },
-    {
-      "description": "Use chore as Semantic Commit prefix for all dependency updates in examples, tests and .github directories",
-      "matchFileNames": ["examples/**", "tests/**", ".github/**"],
-      "semanticCommitType": "chore"
-    },
-    {
-      "description": "Use chore as Semantic Commit prefix for git submodule, go.mod, github actions, and pre-commit updates, and bundle into the same PR to reduce number of PRs created by renovate.",
-      "matchManagers": ["git-submodules", "gomod", "pre-commit", "github-actions"],
-      "semanticCommitType": "chore"
-    },
-    {
-      "description": "Disable terraform required_version and required_provider updates.",
-      "matchManagers": ["terraform"],
-      "matchDepTypes": ["required_version", "required_provider"],
-      "enabled": false
-    },
-    {
-      "description": "Allow the locked in provider version to be updated to the latest for deployable architectures",
-      "enabled": true,
-      "matchFileNames": ["solutions/**"],
-      "matchManagers": ["terraform"],
-      "matchDepTypes": ["required_provider"],
-      "rangeStrategy": "bump",
-      "semanticCommitType": "fix"
-    },
-    {
-      "description": "Disable Mastercard/restapi provider updates.",
-      "matchDatasources": ["terraform-provider"],
-      "matchPackageNames": ["Mastercard/restapi"],
-      "enabled": false
-    },
-    {
-      "description": "Custom regex required to bump IBM detect secrets",
-      "matchPackageNames": ["ibm/detect-secrets"],
-      "versioning": "regex:^(?<compatibility>.*)-?(?<major>\\d+)\\.(?<minor>\\d+)\\+ibm\\.(?<patch>\\d+)\\.dss$"
-    },
-    {
-      "description": "Ignore requires-python updates in **/pyproject.toml",
-      "matchFileNames": ["**/pyproject.toml"],
-      "matchDepTypes": ["requires-python"],
-      "enabled": false
-    }
+      "matchDatasources": ["docker"],
+      "matchPackageNames": [
+        "icr.io/continuous-delivery/toolchains/devsecops/csso-image-sign"
+      ],
+      "versioning": "regex:^(?<day>\\d{2})-(?<month>\\d{2})-(?<year>\\d{4})-(?<hour>\\d{2})-(?<minute>\\d{2})$"
+      }
   ]
 }
