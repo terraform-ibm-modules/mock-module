@@ -1,4 +1,21 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["local>terraform-ibm-modules/common-dev-assets:commonRenovateConfig"]
+  "extends": [
+    "local>terraform-ibm-modules/common-dev-assets:commonRenovateConfig"
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Custom regex rule to bump the version (docker tag) of the logs routing agent (required until they support image digest)",
+      "fileMatch": [
+        "\\.tf$"
+      ],
+      "matchStrings": [
+        "logs_routing_agent_init_image_version\\s*=\\s*\"(?<currentValue>[\\w.-]+)\"\\s*# datasource: (?<depName>[^\\s]+)\\s*( versioning=(?<versioning>.*?))?\\s.*?",
+        "logs_routing_agent_image_version\\s*=\\s*\"(?<currentValue>[\\w.-]+)\"\\s*# datasource: (?<depName>[^\\s]+)\\s*( versioning=(?<versioning>.*?))?\\s.*?"
+      ],
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    }
+  ]
 }
