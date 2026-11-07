@@ -2,5 +2,15 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "local>terraform-ibm-modules/common-dev-assets:commonRenovateConfig"
+  ],
+  "packageRules": [
+    {
+      "description": "csso-image-sign is tagged DD-MM-YYYY-HH-MM (not semver). Renovate regex versioning only accepts major/minor/patch/build/revision groups, so map year->major, month->minor, day->patch, hour->build, minute->revision to get chronological ordering.",
+      "matchDatasources": ["docker"],
+      "matchPackageNames": [
+        "icr.io/continuous-delivery/toolchains/devsecops/csso-image-sign"
+      ],
+      "versioning": "regex:^(?<patch>\\d{2})-(?<minor>\\d{2})-(?<major>\\d{4})-(?<build>\\d{2})-(?<revision>\\d{2})$"
+    }
   ]
 }
